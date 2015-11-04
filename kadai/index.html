@@ -2,14 +2,118 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8">
-  <title>文具のアオキ</title>
+  <title>文具のアヲキ</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/csshake.min.css">
   <script src="js/jquery-2.1.4.min.js"></script>
   <script src="js/aoki.js"></script>
 </head>
 <body>
+  <header id="top">
+    <h1>文具のアヲキ</h1>
+  </header>
 
-  <h1>AOKI</h1>
+  <nav>
+    <ul>
+      <li><a href="#top">TOP</a></li>
+      <li><a href="#product">逸品文房具</a></li>
+      <li><a href="#about">会社案内</a></li>
+      <li><a href="#contact">お問い合わせ</a></li>
+    </ul>
+  </nav>
 
+  <div id="contents">
+    <article id="graphic">
+      <h1 id="name">文具のアヲキ</h1>
+      <div>
+        <img src="images/PP_keshigomutopen-thumb-1000xauto-12820.jpg">
+      </div>
+    </article>
+    <article id="product">
+      <h1>逸品文房具</h1>
+      <section>
+        <h2>システム手帳</h2>
+        <figure>
+          <img src="images/diary.jpg" class="shake-little">
+          <figcaption>
+            サイズ：164mm×232mm×22mm<br>
+            重量：502g
+          </figcaption>
+        </figure>
+        <p>選び抜かれた高品質な革を職人が丹念に仕上げた、丈夫で機能的なシステム手帳です。バイブルサイズは、どなたにもお使いいただけるスタンダードな大きさ。<br>
+           美しさと耐久性を兼ね備えた本品は、長く使える最高のパートナーとなるでしょう。
+        </p>
+      </section>
+      <section>
+        <h2>地球儀</h2>
+        <figure>
+          <img src="images/globe.jpg" class="shake">
+          <figcaption>
+            サイズ：30.5cm/4200万分の1<br>
+            重量：1.4kg
+          </figcaption>
+        </figure>
+        <p>地球儀というと、何の変哲もない商品のように思われがちですが、新しい作成法、新しいデザインを得て、非常に興味深い、おしゃれでインテリア性の高い商品になりました。</p>
+      </section>
+      <section>
+        <h2>電卓</h2>
+        <figure>
+          <img src="images/calc.jpg" class="shake-hard">
+          <figcaption>
+            サイズ：164mm×232mm×22mm<br>
+            重量：498g
+          </figcaption>
+        </figure>
+        <p>電卓です。</p>
+      </section>
+    </article>
+
+    <article id="about">
+      <h1>会社案内</h1>
+      <p><img src="images/map.gif" class="shake-crazy"></p>
+      <section>
+        <h2>住所・電話番号</h2>
+        <p>〒123-xxxx<br>
+        東京都江戸川区小峰4-x-x<br>
+        TEL：03-3633-xxxx<br>
+        FAX：03-3635-xxxx</p>
+      </section>
+      <section>
+        <h2>無料配送サービス</h2>
+        <p>午前中に、FAXでご注文を頂けば、当日中に無料にて配送いたします。<br>
+        取り扱い品目：一般事務用品、製図用品</p>
+      </section>
+    </article>
+
+    <article id="contact">
+      <h1>お問い合わせ</h1>
+      <form action="#">
+        <p><label>お名前（必須）<br>
+          <input type="text" name="name" required placeholder="山田　太郎"></label>
+        </p>
+        <p><label>メールアドレス（必須）<br>
+          <input type="email" name="mail" required placeholder="exam@example.com"></label>
+        </p>
+        <p>お問い合わせ<br>
+          <label><input type="radio" name="kind" value="0" checked>商品構成・内容</label>
+          <label><input type="radio" name="kind" value="1">無料配送サービス</label>
+          <label><input type="radio" name="kind" value="3">その他</label>
+        </p>
+        <p><label>ご質問・ご意見・ご希望<br>
+          <textarea name="comment" placeholder="ご意見・ご要望をご記入ください。"></textarea></label>
+        </p>
+        <p>入力内容確認<br>
+          <label><input type="checkbox" name="confirm">送信する前に確認画面を表示する。</label>
+        </p>
+
+        <p><input type="submit" value="確認する"> <input type="reset" value="キャンセル"></p>
+      </form>
+    </article>
+  </div>
+
+  <footer id="footer">
+    <p id="copyright"><small>Copyright &copy;2015 文具のアヲキ All rights reserved.</small></p>
+  </footer>
+  <div id="back-link"><a href="#top" class="shake-opacity">Topへ戻る</a></div>
 </body>
 </html>
