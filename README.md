@@ -1,12 +1,8 @@
 # ikad.github.io
 
-いろいろ作ったよ。
-
 ## [ikad.github.io](http://ikad.github.io/)
 
-### 参考URL
-
-- [ブルブル震えるやつ](http://elrumordelaluz.github.io/csshake/)
+いろいろ作ったよ。
 
 ## みんなの
 
@@ -25,3 +21,11 @@
 - [kunkun99.github.io](http://kunkun99.github.io)
 - [hakunkta3.github.io](http://hakunkta3.github.io)
 - [sleepedtiger.github.io](http://sleepedtiger.github.io)
+
+### いいわけ
+
+- 課題の「文具のアオキ」の制作時間は約9時間
+
+### 参考URL
+
+- [ブルブル震えるやつ](http://elrumordelaluz.github.io/csshake/)
