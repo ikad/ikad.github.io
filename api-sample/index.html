@@ -16,7 +16,7 @@
 
   <script>
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "//ikad-api-sample.herokuapp.com/api/posts", true);
+    xhr.open("GET", "https://ikad-api-sample.herokuapp.com/api/posts", true);
     xhr.onload = function() {
       var posts_elm = document.getElementById("posts");
       var json = JSON.parse(xhr.responseText);
@@ -33,7 +33,7 @@
       e.preventDefault();
 
       var xhr = new XMLHttpRequest();
-      xhr.open("GET", "//ikad-api-sample.herokuapp.com/api/posts/new", true);
+      xhr.open("GET", "https://ikad-api-sample.herokuapp.com/api/posts/new", true);
       xhr.withCredentials = true;
       xhr.onload = function() {
         var csrf_elm = document.getElementById("csrf-token");
@@ -45,7 +45,7 @@
 
     function sendPost() {
       var xhr2 = new XMLHttpRequest();
-      xhr.open("POST", "//ikad-api-sample.herokuapp.com/api/posts", true);
+      xhr.open("POST", "https://ikad-api-sample.herokuapp.com/api/posts", true);
       xhr.withCredentials = true;
       xhr.send(new FormData(form_elm));
     }
