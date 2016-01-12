@@ -40,16 +40,15 @@
       xhr2.open("GET", host + "/api/posts/new", true);
       xhr2.withCredentials = true;
       xhr2.onload = function() {
-        var csrf_elm = document.getElementById("csrf-token");
-        csrf_elm.value = JSON.parse(xhr2.responseText).token;
-        sendPost();
+        sendPost(JSON.parse(xhr2.responseText).token);
       }
       xhr2.send(null);
     }
 
-    function sendPost() {
+    function sendPost(token) {
       var xhr3 = new XMLHttpRequest();
       xhr3.open("POST", host + "/api/posts", true);
+      xhr3.setRequestHeaders('X-CSRF-Token', token);
       xhr3.withCredentials = true;
       xhr3.send(new FormData(form_elm));
     }
