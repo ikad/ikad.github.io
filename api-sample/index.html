@@ -48,7 +48,7 @@
     function sendPost(token) {
       var xhr3 = new XMLHttpRequest();
       xhr3.open("POST", host + "/api/posts", true);
-      xhr3.setRequestHeaders('X-CSRF-Token', token);
+      xhr3.setRequestHeader('X-CSRF-Token', token);
       xhr3.withCredentials = true;
       xhr3.send(new FormData(form_elm));
     }
