@@ -1,16 +1,65 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="utf-8">
-  <title>作ったものリスト</title>
-</head>
-<body>
-  <ul>
-    <li><a href="hotel/index.html">HOTEL IMPERIAL TOKYO</a></li>
-    <li><a href="todo/todo.html">Todoリスト</a></li>
-    <li><a href="zip/yuubin.html">郵便番号検索</a></li>
-    <li><a href="kadai/index.html">課題(文具のアオキ)</a></li>
-    <li><a href="api-sample/index.html">api-sample</a></li>
-  </ul>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="css/normalize.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="css/style.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="css/font-awesome.min.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Patrick+Hand+SC">
+    <script src="js/script.js"></script>
+  </head>
+  <body>
+    <nav class="header">
+      <h1><a href="index.html">Tokunaga</a></h1>
+      <img id="burger" src="images/icon.png">
+      <ul>
+        <li><a href="#about">about</a></li>
+        <li><a href="#dev">develop</a></li>
+        <li><a href="#skill">skill</a></li>
+        <li><a href="#other">other</a></li>
+      </ul>
+    </nav>
+
+    <div class="container">
+      <div id="about" class="article">
+        <h1>About me</h1>
+        <div class="image">
+          <img src="images/me.png" alt="me" />
+        </div>
+        <ul>
+          <li>Daigo Tokunaga</li>
+          <li>Lives in Fukuoka, Japan</li>
+          <li>Loves Ruby</li>
+        </ul>
+      </div>
+
+      <div id="dev" class="article">
+        <h1>What I developed</h1>
+        <ul>
+          <li><a href="https://sketchers.herokuapp.com/" target="blank">お絵かきサイト</a></li>
+          <li><a href="https://awsome-map.herokuapp.com/" target="blank">地図的な何か</a></li>
+        </ul>
+      </div>
+
+      <div id="skill" class="article">
+        <h1>What I can do</h1>
+        <ul>
+          <li>Ruby</li>
+          <li>Ruby on Rails</li>
+          <li>HTML, CSS</li>
+          <li>JavaScript</li>
+        </ul>
+      </div>
+
+      <div id="other" class="article">
+        <ul>
+          <li><i class="fa fa-github"></i> aaa</li>
+          <li><i class="fa fa-twitter"></i> bbbb</li>
+          <li><i class="fa fa-book"></i> ccc</li>
+        </ul>
+      </div>
+    </div>
+
+  </body>
 </html>
