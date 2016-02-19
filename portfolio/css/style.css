@@ -60,6 +60,7 @@ nav.header ul {
   padding: 0;
   box-shadow: 5px 5px 5px #aaa;
   animation: slide-out .3s both;
+  -webkit-animation: slide-out .3s both;
 }
 @media (min-width: 544px) {
   nav.header ul {
@@ -71,6 +72,7 @@ nav.header ul {
 /*nav.header ul.show */
 nav.header ul.show {
   animation :slide-in .5s both;
+  -webkit-animation :slide-in .5s both;
 }
 nav.header ul.show li {
   z-index: 1000;
@@ -150,15 +152,34 @@ nav.header ul li a {
     0% { background: none; }
   100% { background: rgba(0, 0, 0, .9); color: #fff; }
 }
+@-webkit-keyframes high-light {
+    0% { background: none; }
+  100% { background: rgba(0, 0, 0, .9); color: #fff; }
+}
+
 @keyframes white {
     0% { background: none; }
   100% { background: rgba(255, 255, 255, 0.5); }
 }
+@-webkit-keyframes white {
+    0% { background: none; }
+  100% { background: rgba(255, 255, 255, 0.5); }
+}
+
 @keyframes slide-in {
     0% { left: -100vw; }
   100% { left: 0; }
 }
+@-webkit-keyframes slide-in {
+    0% { left: -100vw; }
+  100% { left: 0; }
+}
+
 @keyframes slide-out {
+    0% { left: 0; }
+  100% { left: -100vw; }
+}
+@-webkit-keyframes slide-out {
     0% { left: 0; }
   100% { left: -100vw; }
 }
