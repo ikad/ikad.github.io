@@ -11,8 +11,8 @@ a:hover {
   animation: high-light .3s both;
 }
 
-/* nav.header */
-nav.header {
+/* header nav */
+header nav {
   position: fixed;
   top: 0;
   left: 0;
@@ -23,33 +23,33 @@ nav.header {
   background: rgba(255, 255, 255, .7);
 }
 @media (min-width: 544px) {
-  nav.header {
+  header nav {
     padding: 10px;
   }
 }
 
-/* nav.header h1 */
-nav.header h1 {
+/* header nav h1 */
+header nav h1 {
   margin: 0 auto 0 0;
 }
-nav.header h1 a:hover {
+header nav h1 a:hover {
   animation: none;
 }
 @media (min-width: 544px) {
 }
 
-/* nav.header img */
-nav.header img {
+/* header nav img */
+header nav img {
   line-height: 44px;
 }
 @media (min-width: 544px) {
-  nav.header img {
+  header nav img {
     display: none;
   }
 }
 
-/*nav.header ul */
-nav.header ul {
+/*header nav ul */
+header nav ul {
   position: fixed;
   display: flex;
   flex-direction: column;
@@ -63,21 +63,21 @@ nav.header ul {
   -webkit-animation: slide-out .3s both;
 }
 @media (min-width: 544px) {
-  nav.header ul {
+  header nav ul {
     position: static;
     flex-direction: row;
     box-shadow: none;
   }
 }
-/*nav.header ul.show */
-nav.header ul.show {
+/*header nav ul.show */
+header nav ul.show {
   animation :slide-in .5s both;
   -webkit-animation :slide-in .5s both;
 }
-nav.header ul.show li {
+header nav ul.show li {
   z-index: 1000;
 }
-nav.header ul.show::after {
+header nav ul.show::after {
   content: '';
   position: fixed;
   top: 0;
@@ -87,13 +87,13 @@ nav.header ul.show::after {
   background: rgba(0, 0, 0, .3);
 }
 
-/* nav.header ul li */
-nav.header ul li {
+/* header nav ul li */
+header nav ul li {
   overflow: hidden;
 }
 
-/* nav.header ul li a */
-nav.header ul li a {
+/* header nav ul li a */
+header nav ul li a {
   display: block;
   box-sizing: border-box;
   padding:0 1em;
@@ -102,15 +102,15 @@ nav.header ul li a {
   background: rgba(255, 255, 255, .9);
 }
 @media (min-width: 544px) {
-  nav.header ul li a {
+  header nav ul li a {
     border-radius: 10px;
     background: none;
     width: auto;
   }
 }
 
-/* .article */
-.article {
+/* section */
+section {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -119,12 +119,12 @@ nav.header ul li a {
   min-height: 100vh;
 }
 
-.article a {
+section a {
   padding: 5px 10px;
   border-radius: 5px;
 }
 
-.article a:hover {
+section a:hover {
   animation: white .3s both;
 }
 
