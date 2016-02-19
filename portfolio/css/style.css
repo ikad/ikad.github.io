@@ -7,6 +7,7 @@ a {
   text-decoration: none;
   color: #000;
 }
+.active a,
 a:hover {
   animation: high-light .3s both;
 }
@@ -89,7 +90,15 @@ header nav ul.show::after {
 
 /* header nav ul li */
 header nav ul li {
-  overflow: hidden;
+    width: auto;
+    background: rgba(255, 255, 255, 0.9);
+    overflow: hidden;
+}
+@media (min-width: 544px) {
+  header nav ul li {
+    background: none;
+    border-radius: 10px;
+  }
 }
 
 /* header nav ul li a */
@@ -99,12 +108,9 @@ header nav ul li a {
   padding:0 1em;
   width: 80vw;
   line-height: 44px;
-  background: rgba(255, 255, 255, .9);
 }
 @media (min-width: 544px) {
   header nav ul li a {
-    border-radius: 10px;
-    background: none;
     width: auto;
   }
 }

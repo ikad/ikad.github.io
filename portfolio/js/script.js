@@ -1,14 +1,16 @@
 $(document).ready(function() {
 
   $('#burger').click(function() {
-    $('nav.header ul').toggleClass('show');
+    $('nav ul').toggleClass('show');
   });
 
-  $('nav.header ul').click(function() {
+  $('nav ul').click(function() {
     $(this).removeClass('show');
   });
 
   $('body').smoothScroll({
-    delegateSelector: 'nav.header ul a'
+    delegateSelector: 'nav ul li a'
   });
+
+  // $('nav ul').scrollspy({offset: 64});
 });
