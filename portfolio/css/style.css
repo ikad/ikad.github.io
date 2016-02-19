@@ -54,7 +54,7 @@ nav.header ul {
   display: flex;
   flex-direction: column;
   top: 54px;
-  left: -100vw;
+  left: 0;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -155,10 +155,10 @@ nav.header ul li a {
   100% { background: rgba(255, 255, 255, 0.5); }
 }
 @keyframes slide-in {
-    0% { margin-left: -100vw; }
-  100% { margin-left: 0; }
+    0% { left: -100vw; }
+  100% { left: 0; }
 }
 @keyframes slide-out {
-    0% { margin-left: 0; }
-  100% { margin-left: -100vw; }
+    0% { left: 0; }
+  100% { left: -100vw; }
 }
