@@ -1,12 +1,14 @@
-document.addEventListener('DOMContentLoaded', function() {
-  var burger = document.getElementById('burger');
-  var nav_ul = document.querySelector('nav.header ul');
+$(document).ready(function() {
 
-  burger.addEventListener('click', function() {
-    nav_ul.classList.toggle('show');
+  $('#burger').click(function() {
+    $('nav.header ul').toggleClass('show');
   });
 
-  nav_ul.addEventListener('click', function() {
-    nav_ul.classList.remove('show');
+  $('nav.header ul').click(function() {
+    $(this).removeClass('show');
+  });
+
+  $('body').smoothScroll({
+    delegateSelector: 'nav.header ul a'
   });
 });
