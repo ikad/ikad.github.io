@@ -1,0 +1,91 @@
+@charset="utf-8";
+
+/* サイトヘッダー */
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: .2em .5em;
+}
+@media (min-width: 544px) {
+  header {
+    padding: 10px 20px;
+  }
+}
+
+/* グローバルナビ メニュー */
+.g-nav ul {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 544px) {
+  .g-nav ul {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+}
+
+/* グローバルナビ アイテム */
+.g-nav ul li {
+  width: 100%;
+  padding-left: .5em;
+}
+@media (min-width: 544px) {
+  .g-nav ul li {
+    padding: 0;
+    text-align: center;
+  }
+}
+/* グローバルナビ アイテム リンク */
+.g-nav ul li a {
+  display: inline-block;
+  width: 100%;
+  line-height: 2em;
+}
+.g-nav ul li a:hover {
+  background: gray;
+}
+
+/* メイン領域 */
+.main {
+  padding: .5em;
+}
+@media (min-width: 544px) {
+  .main {
+    padding: .5em 20px;
+  }
+}
+
+/* サイトフッター */
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+/* フッターナビ */
+.footer-nav ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+@media (min-width: 544px) {
+  .footer-nav ul {
+    flex-wrap: wrap;
+    height: 90px;
+  }
+}
+/* フッターナビ アイテム*/
+.footer-nav ul li {
+  width: 100%;
+  line-height: 30px;
+}
+@media (min-width: 544px) {
+  .footer-nav ul li {
+  }
+}

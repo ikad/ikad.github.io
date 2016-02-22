@@ -8,9 +8,9 @@ $(document).ready(function() {
     $(this).removeClass('show');
   });
 
-  $('body').smoothScroll({
-    delegateSelector: 'nav ul li a'
-  });
+  // $('body').smoothScroll({
+  //   delegateSelector: 'nav ul li a'
+  // });
 
-  // $('nav ul').scrollspy({offset: 64});
+  $('nav ul').scrollspy({offset: -64});
 });
