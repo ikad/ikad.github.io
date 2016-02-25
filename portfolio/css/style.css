@@ -139,11 +139,11 @@ section a:hover {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  width: 100%;
 }
 @media (min-width: 768px) {
   .outer {
     flex-direction: row;
-    width: 100%;
   }
 }
 
@@ -151,7 +151,7 @@ section a:hover {
 .inner {
   display: flex;
   flex-direction: column;
-  width: 320px;
+  width: 310px;
 }
 
 @keyframes high-light {
