@@ -1,15 +1,129 @@
 @charset="utf-8";
 
+/* フォント */
+body * {
+  font-family: 'Noto Sans Japanese', sans-serif;
+}
+p, li, dd {
+  font-family: 'メイリオ', sans-serif;
+}
+
+/* body */
+body {
+}
+
+/* コンテナ */
+.container {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0 auto;
+}
+@media (min-width: 544px) {
+  .container {
+    min-width: 544px;
+    max-width: 960px;
+  }
+}
+
 /* サイトヘッダー */
 header {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  padding: .2em .5em;
+  height: 100px;
 }
 @media (min-width: 544px) {
   header {
-    padding: 10px 20px;
   }
+}
+header h1 {
+  margin-right: auto;
+}
+header img.map {
+  display: none;
+  margin-right: 10px;
+}
+@media (min-width: 544px) {
+  header img.map {
+    display: block;
+  }
+}
+
+/* サイトインフォ */
+header .info {
+  font-size: 0.8em;
+  display: none;
+}
+@media (min-width: 544px) {
+  header .info {
+    display: block;
+  }
+}
+
+/* バーガー */
+.burger {
+  display: block;
+  padding: 5px;
+  border-radius: 5px;
+}
+@media (min-width: 544px) {
+  .burger {
+    display: none;
+  }
+}
+.burger:hover {
+  background: #ccc;
+}
+
+/* グローバルナビ */
+.g-nav {
+  position: fixed;
+  top: 100;
+  left: 100vw;
+  width: 100%;
+  animation: g-nav-hide .3s both;
+  background-color: #e5f2f9;
+  color: #0081C4;
+}
+@media (min-width: 544px) {
+  .g-nav {
+    position: static;
+    margin: 10px auto 0;
+    height: auto;
+    border-top: 1px solid #b2d9ed;
+    animation: none;
+  }
+}
+
+/* グローバルナビ メニュー表示 */
+.g-nav.show {
+  animation: g-nav-show .3s both;
+  box-shadow: -10px 10px 10px rgba(0,0,0,.5);
+}
+@media (min-width: 544px) {
+  .g-nav.show {
+    animation: none;
+    box-shadow: none;
+  }
+}
+.g-nav.show::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100vh;
+  background: rgba(255, 255, 255, .7);
+}
+@keyframes g-nav-show {
+    0% { left: 100vw; }
+  100% { left: 50vw; }
+}
+@keyframes g-nav-hide {
+    0% { left: 50vw; }
+  100% { left: 100vw; }
+
 }
 
 /* グローバルナビ メニュー */
@@ -21,7 +135,8 @@ header {
   .g-nav ul {
     flex-direction: row;
     justify-content: space-between;
-    padding: 0 20px;
+    max-width: 960px;
+    margin: 0 auto;
   }
 }
 
@@ -29,45 +144,59 @@ header {
 .g-nav ul li {
   width: 100%;
   padding-left: .5em;
+  margin: 0;
+  border-top: 1px solid #b2d9ed;
 }
 @media (min-width: 544px) {
   .g-nav ul li {
-    padding: 0;
+    padding-left: 0;
+    margin: .5em;
+    border-top: none;
+    border-radius: 1.5em;
     text-align: center;
   }
 }
+
+/* グローバルナビ アイテム:hover or selected */
+.g-nav ul li.selected,
+.g-nav ul li:hover {
+  animation: g-nav-select .3s both;
+}
+@keyframes g-nav-select {
+    0% { background: rgba(255, 255, 255, 0); }
+  100% { background: rgba(0, 129, 196, .7); color: #fff;}
+}
+
 /* グローバルナビ アイテム リンク */
 .g-nav ul li a {
   display: inline-block;
   width: 100%;
-  line-height: 2em;
-}
-.g-nav ul li a:hover {
-  background: gray;
-}
-
-/* メイン領域 */
-.main {
-  padding: .5em;
-}
-@media (min-width: 544px) {
-  .main {
-    padding: .5em 20px;
-  }
+  line-height: 3em;
+  color: inherit;
+  font-size: 0.9em;
 }
 
 /* サイトフッター */
 footer {
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
   align-items: center;
+  margin: 20px 0 0 0;
+  padding: 1em 0;
 
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  box-sizing: border-box;
   width: 100%;
+  height: 350px;
+  border-top: 1px solid #0081C4;
+  background: #0081C4;
+  color: #fff;
 }
-
+@media (min-width: 544px) {
+  footer {
+    height: 300px;
+  }
+}
 /* フッターナビ */
 .footer-nav ul {
   display: flex;
@@ -77,15 +206,186 @@ footer {
 @media (min-width: 544px) {
   .footer-nav ul {
     flex-wrap: wrap;
-    height: 90px;
+    height: 128px;
+    padding-left: 50%;
   }
 }
 /* フッターナビ アイテム*/
 .footer-nav ul li {
-  width: 100%;
+  padding-left: .5em;
   line-height: 30px;
 }
 @media (min-width: 544px) {
   .footer-nav ul li {
+      padding-left: 0;
   }
+}
+
+/* フッターナビ アイテム リンク */
+.footer-nav ul li a {
+  color: inherit;
+}
+.footer-nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* フッターロゴ */
+footer .logo {
+  margin: 1em;
+}
+
+/* フッターアドレス */
+footer address {
+  margin: .2em 0;
+  font-style: normal;
+}
+
+footer address a {
+  color: inherit;
+}
+footer address a:hover {
+  text-decoration: underline;
+}
+
+/* ---------------------------------*/
+/* メイン領域 */
+.main {
+  padding: 15px .5em;
+  min-height: calc(100vh - 470px);
+}
+@media (min-width: 544px) {
+  .main {
+    min-height: calc(100vh - 490px);
+  }
+}
+
+.main h1 {
+  margin: 0;
+  padding: 0 .5em;
+  border-left: .5em dotted #0081C4;
+  font-size: 1.8em;
+  color: #0081C4;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px gray;
+}
+.main h1 + p {
+  margin-top: 1em;
+}
+.main h2 {
+  margin: 1em 0 .5em;
+  border-bottom: 2px dotted #0081C4;
+  color: #0081C4;
+  font-size: 1.4em;
+}
+.main p {
+  margin: .3em 0;
+  font-size: 0.9em;
+}
+
+.main ul {
+  padding-left: 2em;
+}
+
+.main dt {
+  margin: 1em 1em 0;
+  border-bottom: 1px dotted #0081C4;
+}
+.main dd {
+  margin: .5em 1em;
+  padding-left: 1em;
+  font-size: .9em;
+}
+table {
+  margin: 10px auto 20px;
+  width: 80%;
+}
+th,
+td {
+  padding: .2em .5em;
+  border: 1px solid #0081C4;
+}
+th {
+  background: #0081C4;
+  color: #fff;
+}
+ol {
+  padding-left: 2em;
+  list-style-type: decimal;
+}
+/* レイアウト用 */
+.main .row {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 544px) {
+  .main .row {
+    flex-direction: row;
+  }
+}
+
+.main .col-main {
+}
+
+/* サイドバー */
+.main .col-side {
+  display: none;
+  margin-top: 1em;
+  padding-top: 1em;
+  min-width: 200px;
+  border-top: 1px dotted #0081C4;
+}
+@media (min-width: 544px) {
+  .main .col-side {
+    display: block;
+    margin-left: 20px;
+    margin-top: 0;
+    padding: 0;
+    border: none;
+  }
+}
+.col-side ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* #index */
+#index .wall img.hospital {
+  width: 100%;
+}
+@media (min-width: 544px) {
+  #index .wall img.hospital {
+    position: fixed;
+    top: 140px;
+    left: 0;
+    z-index: -1;
+  }
+}
+#index .main {
+  margin-top: 20px;
+  padding: 20px;
+  background: rgba(255, 255, 255, .8);
+  border-radius: 10px;
+}
+#index .btn {
+  margin: 15px;
+}
+
+/* clinic */
+.section {
+  overflow: hidden;
+}
+.right {
+  float: right;
+  margin: 5px;
+}
+
+/* hospitize*/
+
+/* access */
+#access .map-frame {
+  margin-top: 1em;
+  width: 100%;
+}
+#access dl {
+  min-width: 250px;
 }
