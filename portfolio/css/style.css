@@ -151,7 +151,8 @@ section a:hover {
 .inner {
   display: flex;
   flex-direction: column;
-  width: 340px;
+  min-width: 320px;
+  max-width: 360px;
 }
 
 @keyframes high-light {
