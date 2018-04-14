@@ -1,0 +1,30 @@
+{
+  "name": "ikad.github.pages",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "repository": "git@github.com:ikad/ikad.github.pages.git",
+  "author": "Daigo.Tokunaga <ikadamizo@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1",
+    "react-router": "^4.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^16.3.10",
+    "@types/react-dom": "^16.0.5",
+    "@types/react-router": "^4.0.23",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "ts-loader": "^4.2.0",
+    "typescript": "^2.8.1",
+    "uglifyjs-webpack-plugin": "^1.2.4",
+    "webpack": "^4.5.0",
+    "webpack-cli": "^2.0.14",
+    "webpack-dev-server": "^3.1.3"
+  }
+}
