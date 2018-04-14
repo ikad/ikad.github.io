@@ -9,8 +9,8 @@ module.exports = {
   entry: path.resolve(__dirname, "./src/script/index.ts"),
 
   output: {
-    path: path.resolve(__dirname, "./docs"),
-    filename: "app.js",
+    path: path.resolve(__dirname),
+    filename: "dist/app.js",
   },
 
   module: {
@@ -39,7 +39,7 @@ module.exports = {
   },
 
   devServer: {
-    contentBase: path.resolve(__dirname, "./docs"),
+    contentBase: path.resolve(__dirname),
     port: 3000,
   }
 }
