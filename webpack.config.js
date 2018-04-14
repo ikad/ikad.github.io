@@ -3,10 +3,9 @@ const UglifyJSPlugin = require("uglifyjs-webpack-plugin")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 
 module.exports = {
-  // デプロイするときには "production" へ変更
-  mode: "production",
+  mode: "development",
 
-  entry: path.resolve(__dirname, "./src/script/index.ts"),
+  entry: path.resolve(__dirname, "./src/index.ts"),
 
   output: {
     path: path.resolve(__dirname),

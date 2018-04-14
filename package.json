@@ -5,6 +5,8 @@
   "repository": "git@github.com:ikad/ikad.github.pages.git",
   "author": "Daigo.Tokunaga <ikadamizo@gmail.com>",
   "license": "MIT",
+  "scripts": {
+  },
   "dependencies": {
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
