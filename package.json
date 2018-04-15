@@ -5,14 +5,15 @@
   "repository": "git@github.com:ikad/ikad.github.pages.git",
   "author": "Daigo.Tokunaga <ikadamizo@gmail.com>",
   "license": "MIT",
-  "scripts": {
-  },
+  "scripts": {},
   "dependencies": {
+    "materialize-css": "^1.0.0-beta",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
     "react-router": "^4.2.0"
   },
   "devDependencies": {
+    "@types/materialize-css": "^1.0.1",
     "@types/react": "^16.3.10",
     "@types/react-dom": "^16.0.5",
     "@types/react-router": "^4.0.23",
