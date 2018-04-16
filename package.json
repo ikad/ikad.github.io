@@ -5,7 +5,15 @@
   "repository": "git@github.com:ikad/ikad.github.pages.git",
   "author": "Daigo.Tokunaga <ikadamizo@gmail.com>",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "lint-staged": "lint-staged"
+  },
+  "pre-commit": [
+    "lint-staged"
+  ],
+  "lint-staged": {
+    "*.{ts,tsx}": ["tslint"]
+  },
   "dependencies": {
     "jquery": "^3.3.1",
     "material-ui": "^1.0.0-beta.41",
