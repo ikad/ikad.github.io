@@ -21,7 +21,6 @@ const SiteContent: React.SFC<ISiteContentProps> = (props: any) => {
         </div>
       </div>
 
-
       <div className="container">
         <div className="section">
 

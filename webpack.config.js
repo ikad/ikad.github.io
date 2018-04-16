@@ -1,4 +1,5 @@
 const path = require("path")
+const webpack = require("webpack")
 const UglifyJSPlugin = require("uglifyjs-webpack-plugin")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 
@@ -21,7 +22,7 @@ module.exports = {
       },
       {
         test: /\.html$/,
-        loader: "html-loader"
+        loader: "html-loader",
       }
     ],
   },
@@ -29,7 +30,12 @@ module.exports = {
   plugins: [
     new UglifyJSPlugin(),
     new HtmlWebpackPlugin({
-      template: "./src/index.html"
+      template: "./src/index.html",
+    }),
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
+      "window.jQuer": "jquery",
     })
   ],
 
