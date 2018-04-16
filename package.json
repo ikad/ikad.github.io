@@ -12,22 +12,29 @@
     "lint-staged"
   ],
   "lint-staged": {
-    "*.{ts,tsx}": ["tslint"]
+    "*.{ts,tsx}": [
+      "tslint"
+    ]
   },
   "dependencies": {
-    "jquery": "^3.3.1",
     "material-ui": "^1.0.0-beta.41",
     "material-ui-icons": "^1.0.0-beta.36",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
-    "react-router": "^4.2.0"
+    "react-redux": "^5.0.7",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "redux": "^3.7.2",
+    "redux-devtools-extension": "^2.13.2",
+    "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
-    "@types/jquery": "^3.3.1",
     "@types/material-ui": "^0.21.1",
     "@types/react": "^16.3.10",
     "@types/react-dom": "^16.0.5",
+    "@types/react-redux": "^5.0.16",
     "@types/react-router": "^4.0.23",
+    "@types/react-router-dom": "^4.2.6",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
