@@ -3,16 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/icons": "^1.0.0-beta.42",
+    "material-ui": "^1.0.0-beta.42",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
     "react-redux": "^5.0.7",
+    "react-router": "^4.2.0",
+    "react-router-redux": "^5.0.0-alpha.9",
     "react-scripts-ts": "2.15.1",
     "redux": "^3.7.2"
   },
   "scripts": {
-    "start": "yarn run build:before && react-scripts-ts start",
-    "build": "yarn run build:before && react-scripts-ts build && yarn run build:after",
-    "build:before": "rm index.html & rm asset-manifest.json & rm manifest.json & rm favicon.ico & rm service-worker.js & rm -fr static",
+    "clean": "rm index.html & rm asset-manifest.json & rm manifest.json & rm favicon.ico & rm service-worker.js & rm -fr static",
+    "start": "yarn run clean && react-scripts-ts start",
+    "build": "yarn run clean && react-scripts-ts build && yarn run build:after",
     "build:after": "mv build/* . && rmdir build",
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject"
@@ -22,6 +26,9 @@
     "@types/node": "^9.6.5",
     "@types/react": "^16.3.11",
     "@types/react-dom": "^16.0.5",
+    "@types/react-redux": "^5.0.16",
+    "@types/react-router": "^4.0.23",
+    "@types/react-router-redux": "^5.0.13",
     "typescript": "^2.8.1"
   }
 }
