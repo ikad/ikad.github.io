@@ -1,63 +1,50 @@
 // This file is shared across the demos.
 
-import DeleteIcon from "@material-ui/icons/Delete"
-import DraftsIcon from "@material-ui/icons/Drafts"
-import MailIcon from "@material-ui/icons/Mail"
-import InboxIcon from "@material-ui/icons/MoveToInbox"
-import ReportIcon from "@material-ui/icons/Report"
-import SendIcon from "@material-ui/icons/Send"
-import StarIcon from "@material-ui/icons/Star"
+import BookmarkIcon from "@material-ui/icons/Bookmark"
+import FavoriteIcon from "@material-ui/icons/Favorite"
+import HomeIcon from "@material-ui/icons/Home"
+import InfoIcon from "@material-ui/icons/Info"
 import { ListItem, ListItemIcon, ListItemText } from "material-ui/List"
 import * as React from "react"
 
+import { push } from "react-router-redux"
+import { store } from "../../index"
+
+const goHome = () => store.dispatch(push("/"))
+const goBookmark = () => store.dispatch(push("/bookmark"))
+const goFavorite = () => store.dispatch(push("/favorite"))
+const goAbout = () => store.dispatch(push("/about"))
+
 export const mailFolderListItems = (
   <div>
-    <ListItem button={true}>
+    <ListItem button={true} onClick={goHome}>
       <ListItemIcon>
-        <InboxIcon />
+        <HomeIcon />
       </ListItemIcon>
-      <ListItemText primary="Inbox" />
+      <ListItemText primary="Top" />
     </ListItem>
-    <ListItem button={true}>
+    <ListItem button={true} onClick={goBookmark}>
       <ListItemIcon>
-        <StarIcon />
+        <BookmarkIcon />
       </ListItemIcon>
-      <ListItemText primary="Starred" />
+      <ListItemText primary="Read Later" />
     </ListItem>
-    <ListItem button={true}>
+    <ListItem button={true} onClick={goFavorite}>
       <ListItemIcon>
-        <SendIcon />
+        <FavoriteIcon />
       </ListItemIcon>
-      <ListItemText primary="Send mail" />
-    </ListItem>
-    <ListItem button={true}>
-      <ListItemIcon>
-        <DraftsIcon />
-      </ListItemIcon>
-      <ListItemText primary="Drafts" />
+      <ListItemText primary="Favorite" />
     </ListItem>
   </div>
 )
 
 export const otherMailFolderListItems = (
   <div>
-    <ListItem button={true}>
+    <ListItem button={true} onClick={goAbout}>
       <ListItemIcon>
-        <MailIcon />
+        <InfoIcon />
       </ListItemIcon>
-      <ListItemText primary="All mail" />
-    </ListItem>
-    <ListItem button={true}>
-      <ListItemIcon>
-        <DeleteIcon />
-      </ListItemIcon>
-      <ListItemText primary="Trash" />
-    </ListItem>
-    <ListItem button={true}>
-      <ListItemIcon>
-        <ReportIcon />
-      </ListItemIcon>
-      <ListItemText primary="Spam" />
+      <ListItemText primary="About" />
     </ListItem>
   </div>
 )

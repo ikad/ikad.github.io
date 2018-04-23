@@ -27,9 +27,6 @@ const styles: Record<any, any> = (theme: Theme) => ({
   },
   drawerPaper: {
     width: drawerWidth,
-    [theme.breakpoints.up("md")]: {
-      position: "fixed",
-    },
   },
   navIconHide: {
     [theme.breakpoints.up("md")]: {
@@ -39,7 +36,6 @@ const styles: Record<any, any> = (theme: Theme) => ({
   root: {
     display: "flex",
     flexGrow: 1,
-    minHeight: "100vh",
     overflow: "hidden",
     position: "relative",
     width: "100%",
@@ -77,7 +73,7 @@ class ResponsiveDrawer extends React.Component<IResponsiveDrawer> {
 
     return (
       <div className={classes.root}>
-        <AppBar className={classes.appBar}>
+        <AppBar className={classes.appBar} position="fixed">
           <Toolbar>
             <IconButton
               color="inherit"
@@ -88,7 +84,7 @@ class ResponsiveDrawer extends React.Component<IResponsiveDrawer> {
               <MenuIcon />
             </IconButton>
             <Typography variant="title" color="inherit" noWrap={true}>
-              Responsive drawer
+              ikad.github.io
             </Typography>
           </Toolbar>
         </AppBar>

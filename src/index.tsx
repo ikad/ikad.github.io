@@ -1,7 +1,13 @@
 import * as React from "react"
 import * as ReactDOM from "react-dom"
-import App from "./App"
+
+import About from "./components/About"
+import Bookmark from "./components/Bookmark"
+import Favorite from "./components/Favorite"
+import Top from "./components/Top"
+
 import AppNav from "./components/AppNav"
+
 import registerServiceWorker from "./registerServiceWorker"
 
 import { Provider } from "react-redux"
@@ -19,6 +25,8 @@ import green from "material-ui/colors/green"
 import purple from "material-ui/colors/purple"
 import { createMuiTheme } from "material-ui/styles"
 
+import "./index.css"
+
 // Create a history of your choosing (we're using a browser history in this case)
 const history = createHistory()
 
@@ -27,7 +35,7 @@ const middleware = routerMiddleware(history)
 
 // Add the reducer to your store on the `router` key
 // Also apply our middleware for navigating
-const store = createStore(
+export const store = createStore(
   combineReducers({
     ...reducers,
     router: routerReducer
@@ -59,8 +67,10 @@ ReactDOM.render(
       <React.Fragment>
         <CssBaseline />
         <AppNav classes={{}} theme={theme}>
-          <Route exact={true} path="/" component={App}/>
-          <Route path="/about" component={App}/>
+          <Route exact={true} path="/" component={Top}/>
+          <Route path="/bookmark" component={Bookmark}/>
+          <Route path="/favorite" component={Favorite}/>
+          <Route path="/about" component={About}/>
         </AppNav>
       </React.Fragment>
     </ConnectedRouter>
