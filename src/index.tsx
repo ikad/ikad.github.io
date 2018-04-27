@@ -2,11 +2,10 @@ import * as React from "react"
 import * as ReactDOM from "react-dom"
 
 import About from "./components/About"
+import AppNav from "./components/AppNav"
 import Bookmark from "./components/Bookmark"
 import Favorite from "./components/Favorite"
 import Top from "./components/Top"
-
-import AppNav from "./components/AppNav"
 
 import registerServiceWorker from "./registerServiceWorker"
 
@@ -14,16 +13,17 @@ import { Provider } from "react-redux"
 import { applyMiddleware, combineReducers, createStore } from "redux"
 
 import createHistory from "history/createBrowserHistory"
-import CssBaseline from "material-ui/CssBaseline"
 import { Route } from "react-router"
-
 import { ConnectedRouter, routerMiddleware, routerReducer } from "react-router-redux"
 
 import reducers from "./reducers" // Or wherever you keep your reducers
 
 import green from "material-ui/colors/green"
 import purple from "material-ui/colors/purple"
+import CssBaseline from "material-ui/CssBaseline"
 import { createMuiTheme } from "material-ui/styles"
+
+import { composeWithDevTools } from "redux-devtools-extension/logOnlyInProduction"
 
 import "./index.css"
 
@@ -40,7 +40,7 @@ export const store = createStore(
     ...reducers,
     router: routerReducer
   }),
-  applyMiddleware(middleware)
+  composeWithDevTools(applyMiddleware(middleware))
 )
 
 // Now you can dispatch navigation actions from anywhere!
