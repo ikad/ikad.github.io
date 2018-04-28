@@ -62,12 +62,15 @@ class ResponsiveDrawer extends React.Component<IResponsiveDrawer> {
     const { classes, theme } = this.props
 
     const drawer = (
-      <div>
-        <div className={classes.toolbar} />
-        <Divider />
-        <List>{mailFolderListItems}</List>
-        <Divider />
-        <List>{otherMailFolderListItems}</List>
+      <div
+        onClick={this.handleDrawerToggle}
+        onKeyDown={this.handleDrawerToggle}
+      >
+          <div className={classes.toolbar} />
+          <Divider />
+          <List>{mailFolderListItems}</List>
+          <Divider />
+          <List>{otherMailFolderListItems}</List>
       </div>
     )
 

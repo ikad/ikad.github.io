@@ -7,29 +7,23 @@ import InfoIcon from "@material-ui/icons/Info"
 import { ListItem, ListItemIcon, ListItemText } from "material-ui/List"
 import * as React from "react"
 
-import { push } from "react-router-redux"
-import { store } from "../../index"
-
-const goHome = () => store.dispatch(push("/"))
-const goBookmark = () => store.dispatch(push("/bookmark"))
-const goFavorite = () => store.dispatch(push("/favorite"))
-const goAbout = () => store.dispatch(push("/about"))
+import * as action from "../../actions"
 
 export const mailFolderListItems = (
   <div>
-    <ListItem button={true} onClick={goHome}>
+    <ListItem button={true} onClick={action.goHome}>
       <ListItemIcon>
         <HomeIcon />
       </ListItemIcon>
       <ListItemText primary="Top" />
     </ListItem>
-    <ListItem button={true} onClick={goBookmark}>
+    <ListItem button={true} onClick={action.goBookmark}>
       <ListItemIcon>
         <BookmarkIcon />
       </ListItemIcon>
       <ListItemText primary="Read Later" />
     </ListItem>
-    <ListItem button={true} onClick={goFavorite}>
+    <ListItem button={true} onClick={action.goFavorite}>
       <ListItemIcon>
         <FavoriteIcon />
       </ListItemIcon>
@@ -40,7 +34,7 @@ export const mailFolderListItems = (
 
 export const otherMailFolderListItems = (
   <div>
-    <ListItem button={true} onClick={goAbout}>
+    <ListItem button={true} onClick={action.goAbout}>
       <ListItemIcon>
         <InfoIcon />
       </ListItemIcon>

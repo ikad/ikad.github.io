@@ -1,3 +1,4 @@
+import { routerReducer } from "react-router-redux"
 import { combineReducers } from "redux"
 import articles from "./articles"
 
@@ -13,4 +14,5 @@ export const initialState = {
 
 export default combineReducers({
   articles,
+  routerReducer,
 })
