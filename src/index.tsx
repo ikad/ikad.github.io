@@ -1,11 +1,11 @@
 import * as React from "react"
 import * as ReactDOM from "react-dom"
 
-import About from "./components/About"
 import AppNav from "./components/AppNav"
-import Bookmark from "./components/Bookmark"
-import Favorite from "./components/Favorite"
-import Top from "./components/Top"
+import About from "./containers/About"
+import Bookmark from "./containers/Bookmark"
+import Favorite from "./containers/Favorite"
+import Top from "./containers/Top"
 
 import registerServiceWorker from "./registerServiceWorker"
 

@@ -5,6 +5,7 @@ import Drawer from "material-ui/Drawer"
 import Hidden from "material-ui/Hidden"
 import IconButton from "material-ui/IconButton"
 import List from "material-ui/List"
+import { ListItem, ListItemText } from "material-ui/List"
 import { Theme, withStyles } from "material-ui/styles"
 import Toolbar from "material-ui/Toolbar"
 import Typography from "material-ui/Typography"
@@ -16,6 +17,7 @@ const drawerWidth = 240
 const styles: Record<any, any> = (theme: Theme) => ({
   appBar: {
     marginLeft: drawerWidth,
+    position: "absolute",
     [theme.breakpoints.up("md")]: {
       width: `calc(100% - ${drawerWidth}px)`,
     },
@@ -66,11 +68,15 @@ class ResponsiveDrawer extends React.Component<IResponsiveDrawer> {
         onClick={this.handleDrawerToggle}
         onKeyDown={this.handleDrawerToggle}
       >
-          <div className={classes.toolbar} />
-          <Divider />
-          <List>{mailFolderListItems}</List>
-          <Divider />
-          <List>{otherMailFolderListItems}</List>
+        <List>
+          <ListItem>
+            <ListItemText primary="ikad.github.io" />
+          </ListItem>
+        </List>
+        <Divider />
+        <List>{mailFolderListItems}</List>
+        <Divider />
+        <List>{otherMailFolderListItems}</List>
       </div>
     )
 
@@ -126,4 +132,4 @@ class ResponsiveDrawer extends React.Component<IResponsiveDrawer> {
   }
 }
 
-export default withStyles(styles, { withTheme: true })(ResponsiveDrawer)
+export default withStyles(styles)(ResponsiveDrawer)
