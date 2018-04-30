@@ -92,9 +92,7 @@ class ResponsiveDrawer extends React.Component<IResponsiveDrawer> {
             >
               <MenuIcon />
             </IconButton>
-            <Typography variant="title" color="inherit" noWrap={true}>
-              ikad.github.io
-            </Typography>
+            <Typography variant="title" color="inherit" noWrap={true} />
           </Toolbar>
         </AppBar>
         <Hidden mdUp={true}>
