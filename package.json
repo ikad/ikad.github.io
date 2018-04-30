@@ -2,6 +2,14 @@
   "name": "ts-react-app",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "clean": "rm index.html & rm asset-manifest.json & rm manifest.json & rm favicon.ico & rm service-worker.js & rm -fr static",
+    "start": "yarn run clean && react-scripts-ts start",
+    "build": "yarn run clean && react-scripts-ts build && yarn run build:after",
+    "build:after": "mv build/* . && rmdir build",
+    "test": "react-scripts-ts test --env=jsdom",
+    "eject": "react-scripts-ts eject"
+  },
   "dependencies": {
     "@material-ui/icons": "^1.0.0-beta.42",
     "material-ui": "^1.0.0-beta.42",
@@ -14,21 +22,13 @@
     "react-scripts-ts": "2.15.1",
     "redux": "^3.7.2"
   },
-  "scripts": {
-    "clean": "rm index.html & rm asset-manifest.json & rm manifest.json & rm favicon.ico & rm service-worker.js & rm -fr static",
-    "start": "yarn run clean && react-scripts-ts start",
-    "build": "yarn run clean && react-scripts-ts build && yarn run build:after",
-    "build:after": "mv build/* . && rmdir build",
-    "test": "react-scripts-ts test --env=jsdom",
-    "eject": "react-scripts-ts eject"
-  },
   "devDependencies": {
     "@types/jest": "^22.2.3",
-    "@types/node": "^9.6.5",
-    "@types/react": "^16.3.11",
+    "@types/node": "8.0.0",
+    "@types/react": "^16.3.13",
     "@types/react-dom": "^16.0.5",
-    "@types/react-redux": "^5.0.16",
-    "@types/react-router": "^4.0.23",
+    "@types/react-redux": "^5.0.19",
+    "@types/react-router": "^4.0.24",
     "@types/react-router-dom": "^4.2.6",
     "@types/react-router-redux": "^5.0.13",
     "redux-devtools-extension": "^2.13.2",

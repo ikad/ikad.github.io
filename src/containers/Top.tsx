@@ -2,7 +2,7 @@ import * as React from "react"
 import { connect } from "react-redux"
 import { IArticle } from "../reducers"
 
-import Article from "../components/Article"
+import ArticleList from "../components/ArticleList"
 
 interface ITopProps {
   articles: IArticle[]
@@ -10,7 +10,7 @@ interface ITopProps {
 
 class Top extends React.Component<ITopProps> {
   public render() {
-    const articleElements = this.props.articles.map((c, i) => <Article key={i} {...c} />)
+    const articleElements = this.props.articles.map((c, i) => <ArticleList key={i} {...c} />)
 
     return (
       <React.Fragment>

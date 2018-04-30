@@ -48,7 +48,7 @@ const styles: Record<any, any> = (theme: Theme) => ({
 
 interface IResponsiveDrawer {
   classes: any
-  theme: Theme
+  // theme: Theme
 }
 
 class ResponsiveDrawer extends React.Component<IResponsiveDrawer> {
@@ -61,7 +61,8 @@ class ResponsiveDrawer extends React.Component<IResponsiveDrawer> {
   }
 
   public render() {
-    const { classes, theme } = this.props
+    const { classes } = this.props
+    // const { classes, theme } = this.props
 
     const drawer = (
       <div
@@ -98,7 +99,6 @@ class ResponsiveDrawer extends React.Component<IResponsiveDrawer> {
         <Hidden mdUp={true}>
           <Drawer
             variant="temporary"
-            anchor={theme.direction === "rtl" ? "right" : "left"}
             open={this.state.mobileOpen}
             onClose={this.handleDrawerToggle}
             classes={{
