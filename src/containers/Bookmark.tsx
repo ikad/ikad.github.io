@@ -1,18 +1,27 @@
 import * as React from "react"
+import { connect } from "react-redux"
+import { IArticle } from "../reducers"
 
-class Bookmark extends React.Component {
+import ArticleList from "../components/ArticleList"
+
+interface IBookmarkProps {
+  articles: IArticle[]
+}
+
+class Bookmark extends React.Component<IBookmarkProps> {
   public render() {
+    const articleElements = this.props.articles.map((c, i) => <ArticleList key={i} {...c} />)
+
     return (
       <React.Fragment>
-        <header className="App-header">
-          <h1 className="App-title">ブックマーク</h1>
-        </header>
-        <p className="App-intro">
-          ブックマークページだよ。
-        </p>
+        {articleElements}
       </React.Fragment>
     )
   }
 }
 
-export default Bookmark
+const mapStateToProps = (state: any, props: any) => (
+  state
+)
+
+export default connect(mapStateToProps)(Bookmark)

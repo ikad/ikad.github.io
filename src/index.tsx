@@ -5,8 +5,8 @@ import AppNav from "./components/AppNav"
 import About from "./containers/About"
 import Bookmark from "./containers/Bookmark"
 import Favorite from "./containers/Favorite"
+import Home from "./containers/Home"
 import ShowArticle from "./containers/ShowArticle"
-import Top from "./containers/Top"
 
 import { Provider } from "react-redux"
 import { Route } from "react-router"
@@ -26,7 +26,7 @@ ReactDOM.render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
       <ThemeAppNav classes={{}}>
-        <Route exact={true} path="/" component={Top}/>
+        <Route exact={true} path="/" component={Home}/>
         <Route exact={true} path="/:id" component={ShowArticle}/>
         <Route path="/bookmark" component={Bookmark}/>
         <Route path="/favorite" component={Favorite}/>

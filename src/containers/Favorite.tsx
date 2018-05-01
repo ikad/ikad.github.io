@@ -1,18 +1,27 @@
 import * as React from "react"
+import { connect } from "react-redux"
+import { IArticle } from "../reducers"
 
-class Favorite extends React.Component {
+import ArticleList from "../components/ArticleList"
+
+interface IFavoriteProps {
+  articles: IArticle[]
+}
+
+class Favorite extends React.Component<IFavoriteProps> {
   public render() {
+    const articleElements = this.props.articles.map((c, i) => <ArticleList key={i} {...c} />)
+
     return (
       <React.Fragment>
-        <header className="App-header">
-          <h1 className="App-title">お気に入り</h1>
-        </header>
-        <p className="App-intro">
-          お気に入りページだよ。
-        </p>
+        {articleElements}
       </React.Fragment>
     )
   }
 }
 
-export default Favorite
+const mapStateToProps = (state: any, props: any) => (
+  state
+)
+
+export default connect(mapStateToProps)(Favorite)

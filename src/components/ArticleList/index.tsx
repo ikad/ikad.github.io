@@ -1,6 +1,6 @@
 import * as React from "react"
 
-import { Theme, withStyles } from "material-ui/styles"
+import { Theme, withStyles, WithStyles } from "material-ui/styles"
 
 import BookmarkIcon from "@material-ui/icons/Bookmark"
 import FavoriteIcon from "@material-ui/icons/Favorite"
@@ -15,13 +15,12 @@ interface IArticleListProps {
   id: string
   title: string
   body: string
-  classes?: any
 }
 
 const styles: Record<any, any> = (theme: Theme) => ({
 })
 
-const ArticleList: React.SFC<IArticleListProps> = (props) => {
+const ArticleList: React.SFC<IArticleListProps & WithStyles> = (props) => {
   const { classes } = props
 
   return (
@@ -50,4 +49,4 @@ const ArticleList: React.SFC<IArticleListProps> = (props) => {
   )
 }
 
-export default withStyles(styles)(ArticleList)
+export default withStyles(styles)<IArticleListProps>(ArticleList)

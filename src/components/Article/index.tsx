@@ -1,6 +1,6 @@
 import * as React from "react"
 
-import { Theme, withStyles } from "material-ui/styles"
+import { Theme, withStyles, WithStyles } from "material-ui/styles"
 
 import BookmarkIcon from "@material-ui/icons/Bookmark"
 import FavoriteIcon from "@material-ui/icons/Favorite"
@@ -13,16 +13,16 @@ interface IArticleProps {
   id: string
   title: string
   body: string
-  classes?: any
 }
 
 const styles: Record<any, any> = (theme: Theme) => ({
   card: {
+    margin: "auto",
     maxWidth: 750,
   }
 })
 
-const Article: React.SFC<IArticleProps> = (props) => {
+const Article: React.SFC<IArticleProps & WithStyles> = (props) => {
   const { classes } = props
 
   return (
@@ -49,4 +49,4 @@ const Article: React.SFC<IArticleProps> = (props) => {
   )
 }
 
-export default withStyles(styles)(Article)
+export default withStyles(styles)<IArticleProps>(Article)

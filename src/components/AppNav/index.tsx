@@ -6,7 +6,7 @@ import Hidden from "material-ui/Hidden"
 import IconButton from "material-ui/IconButton"
 import List from "material-ui/List"
 import { ListItem, ListItemText } from "material-ui/List"
-import { Theme, withStyles } from "material-ui/styles"
+import { Theme, withStyles, WithStyles } from "material-ui/styles"
 import Toolbar from "material-ui/Toolbar"
 import Typography from "material-ui/Typography"
 import * as React from "react"
@@ -47,11 +47,10 @@ const styles: Record<any, any> = (theme: Theme) => ({
 })
 
 interface IResponsiveDrawer {
-  classes: any
-  // theme: Theme
+  any?: any
 }
 
-class ResponsiveDrawer extends React.Component<IResponsiveDrawer> {
+class ResponsiveDrawer extends React.Component<IResponsiveDrawer & WithStyles> {
   public state = {
     mobileOpen: false,
   }
@@ -130,4 +129,4 @@ class ResponsiveDrawer extends React.Component<IResponsiveDrawer> {
   }
 }
 
-export default withStyles(styles)(ResponsiveDrawer)
+export default withStyles(styles)<IResponsiveDrawer>(ResponsiveDrawer)
