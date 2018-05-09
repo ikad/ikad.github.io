@@ -61,7 +61,6 @@ class ResponsiveDrawer extends React.Component<IResponsiveDrawer & WithStyles> {
 
   public render() {
     const { classes } = this.props
-    // const { classes, theme } = this.props
 
     const drawer = (
       <div

@@ -1,16 +1,27 @@
 import createHistory from "history/createBrowserHistory"
-import { applyMiddleware, createStore } from "redux"
-
 import { routerMiddleware } from "react-router-redux"
-import thunk from "redux-thunk"
-
+import { applyMiddleware, createStore } from "redux"
 import { composeWithDevTools } from "redux-devtools-extension/logOnlyInProduction"
+import { persistReducer, persistStore } from "redux-persist"
+import storage from "redux-persist/lib/storage"
+import thunk from "redux-thunk"
+import rootReducer from "../reducers"
 
-import reducers from "../reducers"
+const persistConfig = {
+  key: "ikad.github.io",
+  storage,
+  whitelist: ["articles", "bookmarks", "favorites"],
+}
+
+const persistedReducer = persistReducer(persistConfig, rootReducer)
 
 export const history = createHistory()
 
-export const store = createStore(
-  reducers,
+const store = createStore(
+  persistedReducer,
   composeWithDevTools(applyMiddleware(thunk, routerMiddleware(history)))
 )
+
+export const persistor = persistStore(store)
+
+export default store

@@ -12,7 +12,9 @@ import { Provider } from "react-redux"
 import { Route } from "react-router"
 import { ConnectedRouter } from "react-router-redux"
 
-import { history, store } from "./store"
+import { PersistGate } from "redux-persist/integration/react"
+
+import store, { history, persistor } from "./store"
 
 import withRoot from "./withRoot"
 
@@ -24,15 +26,17 @@ const ThemeAppNav = withRoot(AppNav)
 
 ReactDOM.render(
   <Provider store={store}>
-    <ConnectedRouter history={history}>
-      <ThemeAppNav classes={{}}>
-        <Route exact={true} path="/" component={Home}/>
-        <Route exact={true} path="/:id" component={ShowArticle}/>
-        <Route path="/bookmark" component={Bookmark}/>
-        <Route path="/favorite" component={Favorite}/>
-        <Route path="/about" component={About}/>
-      </ThemeAppNav>
-    </ConnectedRouter>
+    <PersistGate loading={null} persistor={persistor}>
+      <ConnectedRouter history={history}>
+        <ThemeAppNav classes={{}}>
+          <Route exact={true} path="/" component={Home}/>
+          <Route exact={true} path="/:id" component={ShowArticle}/>
+          <Route path="/bookmark" component={Bookmark}/>
+          <Route path="/favorite" component={Favorite}/>
+          <Route path="/about" component={About}/>
+        </ThemeAppNav>
+      </ConnectedRouter>
+    </PersistGate>
   </Provider>,
   document.getElementById("root")
 )
