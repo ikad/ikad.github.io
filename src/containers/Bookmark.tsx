@@ -20,7 +20,7 @@ class Bookmark extends React.Component<IBookmarkProps> {
   }
 }
 
-const mapStateToProps = (state: any, props: any) => (
+const mapStateToProps = (state: any) => (
   state
 )
 

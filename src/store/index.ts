@@ -18,6 +18,15 @@ const persistedReducer = persistReducer(persistConfig, rootReducer)
 
 export const history = createHistory()
 
+history.listen((location, action) => {
+  setTimeout(() => {
+    if (action === "POP") {
+      return
+    }
+    window.scrollTo(0, 0)
+  })
+})
+
 const store = createStore(
   persistedReducer,
   composeWithDevTools(applyMiddleware(thunk, apiMiddleware, routerMiddleware(history)))

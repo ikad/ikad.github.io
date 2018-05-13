@@ -20,7 +20,7 @@ class Favorite extends React.Component<IFavoriteProps> {
   }
 }
 
-const mapStateToProps = (state: any, props: any) => (
+const mapStateToProps = (state: any) => (
   state
 )
 

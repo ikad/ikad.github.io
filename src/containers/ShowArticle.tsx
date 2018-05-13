@@ -23,7 +23,7 @@ class ShowArticle extends React.Component<IShowArticleProps> {
   }
 }
 
-const mapStateToProps = (state: any, props: any) => (
+const mapStateToProps = (state: any) => (
   state
 )
 

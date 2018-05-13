@@ -80,7 +80,7 @@ class ResponsiveDrawer extends React.Component<IResponsiveDrawer & WithStyles> {
     )
 
     return (
-      <div className={classes.root}>
+      <React.Fragment>
         <AppBar className={classes.appBar} position="fixed">
           <Toolbar>
             <IconButton
@@ -96,36 +96,38 @@ class ResponsiveDrawer extends React.Component<IResponsiveDrawer & WithStyles> {
             </Typography>
           </Toolbar>
         </AppBar>
-        <Hidden mdUp={true}>
-          <Drawer
-            variant="temporary"
-            open={this.state.mobileOpen}
-            onClose={this.handleDrawerToggle}
-            classes={{
-              paper: classes.drawerPaper,
-            }}
-            ModalProps={{
-              keepMounted: true, // Better open performance on mobile.
-            }}
-          >
-            {drawer}
-          </Drawer>
-        </Hidden>
-        <Hidden smDown={true} implementation="css">
-          <Drawer
-            variant="permanent"
-            open={true}
-            classes={{
-              paper: classes.drawerPaper,
-            }}
-          >
-            {drawer}
-          </Drawer>
-        </Hidden>
-        <div className="App">
-          {this.props.children}
+        <div className={classes.root}>
+          <Hidden mdUp={true}>
+            <Drawer
+              variant="temporary"
+              open={this.state.mobileOpen}
+              onClose={this.handleDrawerToggle}
+              classes={{
+                paper: classes.drawerPaper,
+              }}
+              ModalProps={{
+                keepMounted: true, // Better open performance on mobile.
+              }}
+            >
+              {drawer}
+            </Drawer>
+          </Hidden>
+          <Hidden smDown={true} implementation="css">
+            <Drawer
+              variant="permanent"
+              open={true}
+              classes={{
+                paper: classes.drawerPaper,
+              }}
+            >
+              {drawer}
+            </Drawer>
+          </Hidden>
+          <div className="App">
+            {this.props.children}
+          </div>
         </div>
-      </div>
+      </React.Fragment>
     )
   }
 }
