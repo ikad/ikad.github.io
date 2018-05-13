@@ -17,7 +17,7 @@ const drawerWidth = 240
 const styles: Record<any, any> = (theme: Theme) => ({
   appBar: {
     marginLeft: drawerWidth,
-    position: "absolute",
+    position: "fixed",
     [theme.breakpoints.up("md")]: {
       width: `calc(100% - ${drawerWidth}px)`,
     },
@@ -91,7 +91,9 @@ class ResponsiveDrawer extends React.Component<IResponsiveDrawer & WithStyles> {
             >
               <MenuIcon />
             </IconButton>
-            <Typography variant="title" color="inherit" noWrap={true} />
+            <Typography variant="title" color="inherit" noWrap={true}>
+              ikad.github.io
+            </Typography>
           </Toolbar>
         </AppBar>
         <Hidden mdUp={true}>

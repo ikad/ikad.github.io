@@ -1,6 +1,7 @@
 import createHistory from "history/createBrowserHistory"
 import { routerMiddleware } from "react-router-redux"
 import { applyMiddleware, createStore } from "redux"
+import { apiMiddleware } from "redux-api-middleware"
 import { composeWithDevTools } from "redux-devtools-extension/logOnlyInProduction"
 import { persistReducer, persistStore } from "redux-persist"
 import storage from "redux-persist/lib/storage"
@@ -19,7 +20,7 @@ export const history = createHistory()
 
 const store = createStore(
   persistedReducer,
-  composeWithDevTools(applyMiddleware(thunk, routerMiddleware(history)))
+  composeWithDevTools(applyMiddleware(thunk, apiMiddleware, routerMiddleware(history)))
 )
 
 export const persistor = persistStore(store)
