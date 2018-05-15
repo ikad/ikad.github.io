@@ -9,6 +9,7 @@
   "rules": {
     "semicolon": [true, "never"],
     "quotemark": [true, "double", "avoid-escape"],
-    "no-console": [false]
+    "no-console": [false],
+    "no-debugger": [false]
   }
 }
