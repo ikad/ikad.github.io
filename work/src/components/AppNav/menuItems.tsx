@@ -1,10 +1,12 @@
 // This file is shared across the demos.
 
+import ListItem from "@material-ui/core/ListItem"
+import ListItemIcon from "@material-ui/core/ListItemIcon"
+import ListItemText from "@material-ui/core/ListItemText"
 import BookmarkIcon from "@material-ui/icons/Bookmark"
 import FavoriteIcon from "@material-ui/icons/Favorite"
 import HomeIcon from "@material-ui/icons/Home"
 import InfoIcon from "@material-ui/icons/Info"
-import { ListItem, ListItemIcon, ListItemText } from "material-ui/List"
 import * as React from "react"
 
 import { Link } from "react-router-dom"

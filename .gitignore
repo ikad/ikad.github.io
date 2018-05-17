@@ -1,24 +1,24 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
 # dependencies
-./work/node_modules
+work/node_modules
 
 # testing
-./work/coverage
+work/coverage
 
 # production
-./work/build
+work/build
 
 # misc
-./work/env.local
-./work/env.development.local
-./work/env.test.local
-./work/env.production.local
+work/env.local
+work/env.development.local
+work/env.test.local
+work/env.production.local
 
-./work/npm-debug.log*
-./work/yarn-debug.log*
-./work/yarn-error.log*
+work/npm-debug.log*
+work/yarn-debug.log*
+work/yarn-error.log*
 
-./DS_Store
-./**/.DS_Store
-./**/**/.DS_Store
+DS_Store
+**/.DS_Store
+**/**/.DS_Store

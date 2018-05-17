@@ -1,13 +1,15 @@
 import * as React from "react"
 
-import { Theme, withStyles, WithStyles } from "material-ui/styles"
+import { Theme, withStyles, WithStyles } from "@material-ui/core/styles"
 
 import BookmarkIcon from "@material-ui/icons/Bookmark"
 import FavoriteIcon from "@material-ui/icons/Favorite"
 
-import Button from "material-ui/Button"
-import Card, { CardActions, CardContent } from "material-ui/Card"
-import Typography from "material-ui/Typography"
+import Button from "@material-ui/core/Button"
+import Card from "@material-ui/core/Card"
+import CardActions from "@material-ui/core/CardActions"
+import CardContent from "@material-ui/core/CardContent"
+import Typography from "@material-ui/core/Typography"
 
 interface IArticleProps {
   id: string
