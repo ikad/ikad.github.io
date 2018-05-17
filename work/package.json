@@ -3,10 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "clean": "rm index.html & rm asset-manifest.json & rm manifest.json & rm service-worker.js & rm -fr static & rm -fr images",
-    "start": "yarn run clean && react-scripts-ts start",
-    "build": "yarn run clean && react-scripts-ts build && yarn run build:after",
-    "build:after": "mv build/* . && rm -fr build",
+    "start": "react-scripts-ts start",
+    "build": "react-scripts-ts build && yarn run build:after",
+    "build:after": "cp -fr build/* ../ && rm -fr build/*",
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject"
   },
