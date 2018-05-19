@@ -23,9 +23,9 @@
     core-js "^2.5.3"
     regenerator-runtime "^0.11.1"
 
-"@material-ui/core@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@material-ui/core/-/core-1.0.0-rc.1.tgz#71a0b98c5698a4631114678eaec2d28b7d04c369"
+"@material-ui/core@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@material-ui/core/-/core-1.0.0.tgz#857b871038bb300f2d25594ce0cd250be944e71b"
   dependencies:
     "@babel/runtime" "^7.0.0-beta.42"
     "@types/jss" "^9.5.3"
@@ -55,9 +55,9 @@
     scroll "^2.0.3"
     warning "^3.0.0"
 
-"@material-ui/icons@^1.0.0-rc.0":
-  version "1.0.0-rc.0"
-  resolved "https://registry.yarnpkg.com/@material-ui/icons/-/icons-1.0.0-rc.0.tgz#1c836832183d509eaac9df42aa31dbbe4dd337cb"
+"@material-ui/icons@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@material-ui/icons/-/icons-1.0.0.tgz#0cac779257de02538be8834e1b0e45b7cd2cb898"
   dependencies:
     recompose "^0.26.0 || ^0.27.0"
 
@@ -77,8 +77,8 @@
     indefinite-observable "^1.0.1"
 
 "@types/node@*":
-  version "10.1.0"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.1.0.tgz#2783ee1b6c47cbd4044f4a233976c1ac5fa9e942"
+  version "10.1.1"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.1.1.tgz#ca39d8607fa1fcb146b0530420b93f1dd4802f6c"
 
 "@types/node@8.0.0":
   version "8.0.0"
@@ -1414,12 +1414,12 @@ caniuse-api@^1.5.2:
     lodash.uniq "^4.5.0"
 
 caniuse-db@^1.0.30000529, caniuse-db@^1.0.30000634, caniuse-db@^1.0.30000639:
-  version "1.0.30000842"
-  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000842.tgz#8a82c377b8b3d6f2594478e8431ff4fd303e160c"
+  version "1.0.30000843"
+  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000843.tgz#4f7e8501f557dc9bcd37dd33ac85905c765efec2"
 
 caniuse-lite@^1.0.30000748, caniuse-lite@^1.0.30000792:
-  version "1.0.30000842"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000842.tgz#7a198e3181a207f4b5749b8f5a1817685bf3d7df"
+  version "1.0.30000843"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000843.tgz#4fdec258dc641c385744cdd49d23c5459c3d4411"
 
 capture-exit@^1.2.0:
   version "1.2.0"
