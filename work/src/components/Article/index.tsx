@@ -2,6 +2,7 @@ import * as React from "react"
 
 import { Theme, withStyles, WithStyles } from "@material-ui/core/styles"
 
+import ArrowBack from "@material-ui/icons/ArrowBack"
 import BookmarkIcon from "@material-ui/icons/Bookmark"
 
 import Button from "@material-ui/core/Button"
@@ -12,11 +13,14 @@ import Typography from "@material-ui/core/Typography"
 
 import { IArticle } from "../../reducers/index"
 
+import { routerActions } from "react-router-redux"
+
 import * as ReactMarkdown from "react-markdown"
 
 interface IArticleProps {
   article: IArticle,
   onToggleBookmark: any
+  dispatch: any
 }
 
 const styles: Record<any, any> = (theme: Theme) => ({
@@ -28,6 +32,10 @@ const styles: Record<any, any> = (theme: Theme) => ({
 
 const Article: React.SFC<IArticleProps & WithStyles> = (props) => {
   const { article, onToggleBookmark, classes } = props
+  const handleBackClick = () => {
+    props.dispatch(routerActions.goBack())
+  }
+  const bookmarkColor = article.bookmark ? "primary" : "default"
 
   return (
     <Card className={classes.card}>
@@ -38,7 +46,10 @@ const Article: React.SFC<IArticleProps & WithStyles> = (props) => {
         <ReactMarkdown source={article.body} className="" />
       </CardContent>
       <CardActions>
-        <Button size="small" color="primary" onClick={onToggleBookmark}>
+        <Button size="small" color="primary" onClick={handleBackClick}>
+          <ArrowBack />&nbsp;Back
+        </Button>
+        <Button size="small" color={bookmarkColor} onClick={onToggleBookmark}>
           <BookmarkIcon />&nbsp;Bookmark
         </Button>
       </CardActions>

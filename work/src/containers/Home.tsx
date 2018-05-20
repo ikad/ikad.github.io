@@ -2,7 +2,11 @@ import * as React from "react"
 import { connect } from "react-redux"
 import { IArticle } from "../reducers"
 
-import ArticleList from "../components/ArticleList"
+import ArticleListItem from "../components/ArticleListItem"
+
+import { Theme, withStyles, WithStyles } from "@material-ui/core/styles"
+
+import List from "@material-ui/core/List"
 
 import * as actions from "../actions"
 
@@ -11,18 +15,37 @@ interface IHomeProps {
   dispatch: any
 }
 
-class Home extends React.Component<IHomeProps> {
+const styles: Record<any, any> = (theme: Theme) => ({
+  root: {
+    backgroundColor: theme.palette.background.paper,
+    maxWidth: 360,
+    width: "100%",
+  },
+})
+
+class Home extends React.Component<IHomeProps & WithStyles> {
   public componentWillMount() {
     this.props.dispatch(actions.loadArticles())
   }
 
   public render() {
-    const articleElements = this.props.articles.map((c, i) => <ArticleList key={i} article={c} />)
+    const articleListItemElement = (article: IArticle, index: number) => {
+      const handleToggleBookmark = () => {
+        this.props.dispatch(actions.toggleBookmark(article))
+      }
+
+      return (
+        <ArticleListItem key={index} article={article} onToggleBookmark={handleToggleBookmark} dispatch={this.props.dispatch} />
+      )
+    }
+    const articleListElement = this.props.articles.map((c, i) => articleListItemElement(c, i))
 
     return (
-      <React.Fragment>
-        {articleElements}
-      </React.Fragment>
+      <div>
+        <List>
+          {articleListElement}
+        </List>
+      </div>
     )
   }
 }
@@ -31,4 +54,4 @@ const mapStateToProps = (state: any, props: any) => (
   state
 )
 
-export default connect(mapStateToProps)(Home)
+export default connect(mapStateToProps)(withStyles(styles)<IHomeProps>(Home))

@@ -7,14 +7,14 @@ import * as React from "react"
 const theme = createMuiTheme({
   palette: {
     primary: {
-      dark: purple[700],
-      light: purple[300],
-      main: purple[500],
+      dark: purple[900],
+      light: purple[500],
+      main: purple[700],
     },
     secondary: {
-      dark: green[700],
-      light: green[300],
-      main: green[500],
+      dark: green[900],
+      light: green[500],
+      main: green[700],
     },
   },
 })

@@ -24,7 +24,7 @@ class ShowArticle extends React.Component<IShowArticleProps> {
 
     return (
       <React.Fragment>
-        <Article article={article} onToggleBookmark={handleToggleBookmark} />
+        <Article article={article} onToggleBookmark={handleToggleBookmark} dispatch={this.props.dispatch} />
       </React.Fragment>
     )
   }
