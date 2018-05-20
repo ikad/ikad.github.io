@@ -33,7 +33,7 @@ const ArticleList: React.SFC<IArticleListProps & WithStyles> = (props) => {
           </Link>
         </Typography>
         <Typography component="p">
-          {article.body.substring(0, 140)}...
+          {article.body.substring(0, 60)}...
         </Typography>
       </CardContent>
       <CardActions>

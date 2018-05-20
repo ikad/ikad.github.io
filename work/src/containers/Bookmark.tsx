@@ -11,7 +11,7 @@ interface IBookmarkProps {
 
 class Bookmark extends React.Component<IBookmarkProps> {
   public render() {
-    const articleElements = this.props.articles.map((c, i) => <ArticleList key={i} article={c} />)
+    const articleElements = this.props.articles.filter(c => !!c.bookmark).map((c, i) => <ArticleList key={i} article={c} />)
 
     return (
       <React.Fragment>

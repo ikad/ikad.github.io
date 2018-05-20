@@ -6,7 +6,7 @@ export interface IArticle {
   id: string
   title: string
   body: string
-  updated_at: Date
+  updated_at: number
   bookmark: boolean
   favorite: boolean
 }
