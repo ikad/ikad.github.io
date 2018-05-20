@@ -6,11 +6,12 @@ import ArticleList from "../components/ArticleList"
 
 interface IBookmarkProps {
   articles: IArticle[]
+  dispatch: any
 }
 
 class Bookmark extends React.Component<IBookmarkProps> {
   public render() {
-    const articleElements = this.props.articles.map((c, i) => <ArticleList key={i} {...c} />)
+    const articleElements = this.props.articles.map((c, i) => <ArticleList key={i} article={c} />)
 
     return (
       <React.Fragment>

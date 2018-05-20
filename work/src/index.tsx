@@ -4,7 +4,6 @@ import * as ReactDOM from "react-dom"
 import AppNav from "./components/AppNav"
 import About from "./containers/About"
 import Bookmark from "./containers/Bookmark"
-import Favorite from "./containers/Favorite"
 import Home from "./containers/Home"
 import ShowArticle from "./containers/ShowArticle"
 
@@ -17,6 +16,8 @@ import { PersistGate } from "redux-persist/integration/react"
 import store, { history, persistor } from "./store"
 
 import withRoot from "./withRoot"
+
+import "typeface-roboto"
 
 import "./index.css"
 
@@ -32,7 +33,6 @@ ReactDOM.render(
           <Route exact={true} path="/" component={Home}/>
           <Route exact={true} path="/:id" component={ShowArticle}/>
           <Route path="/bookmark" component={Bookmark}/>
-          <Route path="/favorite" component={Favorite}/>
           <Route path="/about" component={About}/>
         </ThemeAppNav>
       </ConnectedRouter>
