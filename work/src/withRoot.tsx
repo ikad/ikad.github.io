@@ -1,5 +1,5 @@
-import green from "@material-ui/core/colors/green"
 import purple from "@material-ui/core/colors/purple"
+import red from "@material-ui/core/colors/red"
 import CssBaseline from "@material-ui/core/CssBaseline"
 import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles"
 import * as React from "react"
@@ -12,9 +12,9 @@ const theme = createMuiTheme({
       main: purple[700],
     },
     secondary: {
-      dark: green[900],
-      light: green[500],
-      main: green[700],
+      dark: red[700],
+      light: red[300],
+      main: red[500],
     },
   },
 })

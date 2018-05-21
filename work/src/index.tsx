@@ -29,7 +29,7 @@ ReactDOM.render(
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
       <ConnectedRouter history={history}>
-        <ThemeAppNav classes={{}}>
+        <ThemeAppNav classes={{}} history={history}>
           <Route exact={true} path="/" component={Home}/>
           <Route exact={true} path="/:id" component={ShowArticle}/>
           <Route path="/bookmark" component={Bookmark}/>

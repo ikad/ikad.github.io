@@ -9,6 +9,7 @@ import ListItemText from "@material-ui/core/ListItemText"
 import { Theme, withStyles, WithStyles } from "@material-ui/core/styles"
 import Toolbar from "@material-ui/core/Toolbar"
 import Typography from "@material-ui/core/Typography"
+import ArrowBack from "@material-ui/icons/ArrowBack"
 import MenuIcon from "@material-ui/icons/Menu"
 import * as React from "react"
 import { mailFolderListItems, otherMailFolderListItems } from "./menuItems"
@@ -48,6 +49,7 @@ const styles: Record<any, any> = (theme: Theme) => ({
 })
 
 interface IResponsiveDrawer {
+  history: any
   any?: any
 }
 
@@ -62,6 +64,21 @@ class ResponsiveDrawer extends React.Component<IResponsiveDrawer & WithStyles> {
 
   public render() {
     const { classes } = this.props
+
+    const isShow = !["/", "/bookmark", "/about"].find(c => c === this.props.history.location.pathname)
+    const iconClick = isShow ? this.props.history.goBack : this.handleDrawerToggle
+    const iconElement = isShow ? <ArrowBack /> : <MenuIcon />
+
+    const iconButton = (
+      <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            onClick={iconClick}
+            className={classes.navIconHide}
+          >
+        {iconElement}
+      </IconButton>
+    )
 
     const drawer = (
       <div
@@ -82,16 +99,9 @@ class ResponsiveDrawer extends React.Component<IResponsiveDrawer & WithStyles> {
 
     return (
       <React.Fragment>
-        <AppBar className={classes.appBar} position="fixed">
+        <AppBar className={classes.appBar}>
           <Toolbar>
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              onClick={this.handleDrawerToggle}
-              className={classes.navIconHide}
-            >
-              <MenuIcon />
-            </IconButton>
+            {iconButton}
             <Typography variant="title" color="inherit" noWrap={true}>
               ikad.github.io
             </Typography>

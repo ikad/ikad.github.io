@@ -9,13 +9,13 @@ import * as actions from "../actions"
 interface IShowArticleProps {
   articles: IArticle[]
   dispatch: any
-  routerReducer: any
+  match: any
 }
 
 class ShowArticle extends React.Component<IShowArticleProps> {
   public render() {
-    const id = this.props.routerReducer.location.pathname
-    const article = this.props.articles.find((c) => `/${c.id}` === id)
+    const id = this.props.match.params.id
+    const article = this.props.articles.find((c) => c.id === id)
     if (!article) { return null }
 
     const handleToggleBookmark = () => {
