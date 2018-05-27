@@ -43,7 +43,10 @@ const Article: React.SFC<IArticleProps & WithStyles> = (props) => {
         <Typography gutterBottom={true} variant="headline" component="h1">
           {article.title}
         </Typography>
-        <ReactMarkdown source={article.body} className="" />
+        <ReactMarkdown
+          className=""
+          source={article.body}
+        />
       </CardContent>
       <CardActions>
         <Button size="small" color="primary" onClick={handleBackClick}>

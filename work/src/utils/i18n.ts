@@ -1,10 +1,11 @@
 import { addLocaleData, IntlProvider } from "react-intl"
 import * as ja from "react-intl/locale-data/ja"
+import ja_JP from "./ja_JP"
 
 addLocaleData([...ja])
 
 export default class I18n {
-  public static intl = new IntlProvider({locale: "ja"}, {}).getChildContext().intl
+  public static intl = new IntlProvider({locale: "ja", messages: ja_JP}, {}).getChildContext().intl
 
   public static t(key: string) {
     return I18n.intl.formatMessage({id: key})

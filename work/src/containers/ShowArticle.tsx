@@ -1,10 +1,10 @@
 import * as React from "react"
 import { connect } from "react-redux"
+
+import * as actions from "../actions"
 import { IArticle } from "../reducers"
 
 import Article from "../components/Article"
-
-import * as actions from "../actions"
 
 interface IShowArticleProps {
   articles: IArticle[]
