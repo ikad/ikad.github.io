@@ -2,9 +2,8 @@ import * as React from "react"
 import { connect } from "react-redux"
 
 import List from "@material-ui/core/List"
-import ListItem from "@material-ui/core/ListItem"
-import ListItemText from "@material-ui/core/ListItemText"
 import { Theme, withStyles, WithStyles } from "@material-ui/core/styles"
+import Typography from "@material-ui/core/Typography"
 
 import * as actions from "../actions"
 import { IArticle } from "../reducers"
@@ -20,6 +19,12 @@ interface IBookmarkProps {
 }
 
 const styles: Record<any, any> = (theme: Theme) => ({
+  empty: {
+    alignItems: "center",
+    display: "flex",
+    height: "100%",
+    justifyContent: "center",
+  },
   root: {
     backgroundColor: theme.palette.background.paper,
     maxWidth: 360,
@@ -29,7 +34,7 @@ const styles: Record<any, any> = (theme: Theme) => ({
 
 class Bookmark extends React.Component<IBookmarkProps & WithStyles> {
   public render() {
-    const { dispatch } = this.props
+    const { classes, dispatch } = this.props
     const articles = this.props.articles.filter(c => !!c.bookmark)
 
     const articleListItemElement = (article: IArticle, index: number) => {
@@ -48,16 +53,18 @@ class Bookmark extends React.Component<IBookmarkProps & WithStyles> {
     const articleListElement = articles.filter(c => !!c.bookmark).map((c, i) => articleListItemElement(c, i))
 
     const emptyListElement = (articles.length === 0 &&
-      <ListItem>
-        <ListItemText primary={i18n.t("bookmark.empty")} />
-      </ListItem>
+      <div className={classes.empty}>
+        <Typography>{i18n.t("bookmark.empty")}</Typography>
+      </div>
     )
 
     return (
-      <List>
-        {articleListElement}
+      <React.Fragment>
         {emptyListElement}
-      </List>
+        <List>
+          {articleListElement}
+        </List>
+      </React.Fragment>
     )
   }
 }
