@@ -12,6 +12,8 @@ import { routerActions } from "react-router-redux"
 
 import { IArticle } from "../../reducers"
 
+import i18n from "../../utils/i18n"
+
 interface IArticleListItemProps {
   article: IArticle
   onToggleBookmark: any
@@ -27,7 +29,7 @@ const ArticleListItem: React.SFC<IArticleListItemProps> = (props) => {
   return (
     <React.Fragment>
       <ListItem>
-        <ListItemText primary={article.title} secondary={article.body.substring(0, 40)} onClick={handleListItemClick} />
+        <ListItemText primary={article.title} secondary={`Updated at : ${i18n.dateTime(article.updated_at)}`} onClick={handleListItemClick} />
         <ListItemSecondaryAction>
           <BookmarkButton bookmark={article.bookmark} onToggleBookmark={onToggleBookmark} />
         </ListItemSecondaryAction>

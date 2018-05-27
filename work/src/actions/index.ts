@@ -25,7 +25,7 @@ export const loadArticle = (id: string) => {
 
 export const toggleBookmark = (article: IArticle) => {
   return {
-    payload: { ...article, bookmark: !article.bookmark },
+    payload: [{ ...article, bookmark: !article.bookmark }],
     type: "TOGGLE_BOOKMARK"
   }
 }

@@ -1,14 +1,21 @@
 import { IArticle, initialState } from "."
 
-const articles = (state: IArticle[] = initialState.articles, action: any) => {
+const articles = (state: IArticle[] = initialState.articles, action: { type: string, payload: IArticle[]}) => {
   switch (action.type) {
     case "SUCCESS/articles":
-      return state.concat(action.payload.filter((c: IArticle) => !state.find(s => s.id === c.id)))
-                  .sort((a, b) => a.updated_at - b.updated_at)
+      return action.payload.map(c => {
+                      const storedArticle = state.find(s => s.id === c.id)
+                      const isBookmark = storedArticle ? storedArticle.bookmark : false
+                      return {...c, bookmark: isBookmark}
+                    })
+                    .sort((a, b) => b.updated_at - a.updated_at)
     case "TOGGLE_BOOKMARK":
-      return state.filter(c => c.id !== action.payload.id)
-                  .concat(action.payload)
-                  .sort((a, b) => a.updated_at - b.updated_at)
+      return state.map(c => {
+                    const targetArticle = action.payload.find(s => s.id === c.id)
+                    const isBookmark = targetArticle ? targetArticle.bookmark : c.bookmark
+                    return {...c, bookmark: isBookmark}
+                  })
+                  .sort((a, b) => b.updated_at - a.updated_at)
     default:
       return state
   }

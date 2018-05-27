@@ -10,6 +10,8 @@ import List from "@material-ui/core/List"
 
 import * as actions from "../actions"
 
+import * as InfiniteScroll from "react-infinite-scroller"
+
 interface IHomeProps {
   articles: IArticle[]
   dispatch: any
@@ -25,7 +27,7 @@ const styles: Record<any, any> = (theme: Theme) => ({
 
 class Home extends React.Component<IHomeProps & WithStyles> {
   public componentWillMount() {
-    this.props.dispatch(actions.loadArticles())
+    this.loadArticles()
   }
 
   public render() {
@@ -43,10 +45,21 @@ class Home extends React.Component<IHomeProps & WithStyles> {
     return (
       <div>
         <List>
-          {articleListElement}
+          <InfiniteScroll
+            loadMore={this.loadArticles}
+            hasMore={false}
+            loader={<div className="loader" key={0}>Loading ...</div>}
+            useWindow={false}
+          >
+            {articleListElement}
+          </InfiniteScroll>
         </List>
       </div>
     )
+  }
+
+  private loadArticles = () => {
+    this.props.dispatch(actions.loadArticles())
   }
 }
 
