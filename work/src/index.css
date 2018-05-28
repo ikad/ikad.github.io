@@ -9,6 +9,11 @@ a {
   width: 100%;
 }
 
+#ShowArticle {
+  height: calc(100vh - 48px);
+  overflow-y: auto;
+}
+
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
@@ -36,6 +41,10 @@ a {
 @media (min-width: 600px) {
   .App {
     padding-top:  64px;
+  }
+
+  #ShowArticle {
+    height: calc(100vh - 64px);
   }
 }
 

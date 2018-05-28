@@ -1,10 +1,10 @@
 import * as React from "react"
 
+import IconButton from "@material-ui/core/IconButton"
+import Zoom from "@material-ui/core/Zoom"
 import BookmarkIcon from "@material-ui/icons/Bookmark"
 import CancelIcon from "@material-ui/icons/Cancel"
 import DeleteIcon from "@material-ui/icons/Delete"
-
-import IconButton from "@material-ui/core/IconButton"
 
 interface IBookmarkButtonProps {
   bookmark: boolean
@@ -39,14 +39,16 @@ class BookmarkButton extends React.Component<IBookmarkButtonProps> {
     )
 
     const confirmIcon = (
-      <div style={{display: "flex",flexDirection: "column" }}>
-        <IconButton aria-label="Bookmark" color="secondary" onClick={handleClick} style={{height: 32}}>
-          <DeleteIcon />
-        </IconButton>
-        <IconButton aria-label="Bookmark" color="default" onClick={handleCancel} style={{height: 32}}>
-          <CancelIcon />
-        </IconButton>
-      </div>
+      <Zoom in={true}>
+        <div style={{display: "flex",flexDirection: "column" }}>
+          <IconButton aria-label="Bookmark" color="secondary" onClick={handleClick} style={{height: 32}}>
+            <DeleteIcon />
+          </IconButton>
+          <IconButton aria-label="Bookmark" color="default" onClick={handleCancel} style={{height: 32}}>
+            <CancelIcon />
+          </IconButton>
+        </div>
+      </Zoom>
     )
 
     return (

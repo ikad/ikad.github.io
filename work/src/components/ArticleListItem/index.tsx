@@ -1,12 +1,10 @@
 import * as React from "react"
+import { routerActions } from "react-router-redux"
 
+import Divider from "@material-ui/core/Divider"
 import ListItem from "@material-ui/core/ListItem"
 import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction"
 import ListItemText from "@material-ui/core/ListItemText"
-
-import Divider from "@material-ui/core/Divider"
-
-import { routerActions } from "react-router-redux"
 
 import { IArticle } from "../../reducers"
 

@@ -4,6 +4,7 @@ import { connect } from "react-redux"
 import List from "@material-ui/core/List"
 import { Theme, withStyles, WithStyles } from "@material-ui/core/styles"
 import Typography from "@material-ui/core/Typography"
+import Zoom from "@material-ui/core/Zoom"
 
 import * as actions from "../actions"
 import { IArticle } from "../reducers"
@@ -54,7 +55,9 @@ class Bookmark extends React.Component<IBookmarkProps & WithStyles> {
 
     const emptyListElement = (articles.length === 0 &&
       <div className={classes.empty}>
-        <Typography>{i18n.t("bookmark.empty")}</Typography>
+        <Zoom in={true}>
+          <Typography>{i18n.t("bookmark.empty")}</Typography>
+        </Zoom>
       </div>
     )
 
