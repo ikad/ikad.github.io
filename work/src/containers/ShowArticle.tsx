@@ -66,7 +66,7 @@ class ShowArticle extends React.Component<IShowArticleProps & WithStyles> {
   private listenScroll = () => {
     this.setState({
       beforeScrollTop: this.scrollDiv.scrollTop,
-      displayActions: this.state.beforeScrollTop > this.scrollDiv.scrollTop,
+      displayActions: this.state.beforeScrollTop >= this.scrollDiv.scrollTop,
     })
   }
 }
