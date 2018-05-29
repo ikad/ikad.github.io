@@ -27,18 +27,17 @@ const styles: Record<any, any> = (theme: Theme) => ({
 
 class ShowArticle extends React.Component<IShowArticleProps & WithStyles> {
   public state = {
-    beforeScrollTop: 0,
-    displayActions: true,
+    beforeScrollY: 0,
+    displayAction: true,
   }
 
-  private scrollDiv: any
-
-  public shouldComponentUpdate(nextProps: any, nextStateIgnore: any) {
-    return nextProps.displayActions !== this.state.displayActions
+  public componentWillMount() {
+    window.addEventListener("scroll", this.scrollListener)
   }
 
   public render() {
     const { articles, dispatch, classes } = this.props
+    const { displayAction }= this.state
     const id = this.props.match.params.id
 
     const article = articles.find((c) => c.id === id)
@@ -50,10 +49,10 @@ class ShowArticle extends React.Component<IShowArticleProps & WithStyles> {
     }
 
     return (
-      <div ref={(inst) => { this.scrollDiv = inst }} id="ShowArticle" onScroll={this.listenScroll}>
+      <div id="ShowArticle">
         <Article article={article} dispatch={dispatch} />
         <div className={classes.fab}>
-          <Zoom in={this.state.displayActions}>
+          <Zoom in={displayAction}>
             <Button variant="fab" color={bookmarkColor} onClick={handleToggleBookmark}>
               <BookmarkIcon />
             </Button>
@@ -63,14 +62,11 @@ class ShowArticle extends React.Component<IShowArticleProps & WithStyles> {
     )
   }
 
-  private listenScroll = () => {
-    return this.scrollDiv
-    // if (this.state.displayActions !== (this.state.beforeScrollTop >= this.scrollDiv.scrollTop)) {
-    //   this.setState({
-    //     beforeScrollTop: this.scrollDiv.scrollTop,
-    //     displayActions: !this.state.displayActions,
-    //   })
-    // }
+  private scrollListener = () => {
+    this.setState({
+      beforeScrollY: window.scrollY,
+      displayAction: window.scrollY <= this.state.beforeScrollY,
+    })
   }
 }
 
