@@ -65,7 +65,7 @@ class ShowArticle extends React.Component<IShowArticleProps & WithStyles> {
   private scrollListener = () => {
     this.setState({
       beforeScrollY: window.scrollY,
-      displayAction: window.scrollY <= this.state.beforeScrollY,
+      displayAction: window.scrollY <= 0 || window.scrollY <= this.state.beforeScrollY,
     })
   }
 }

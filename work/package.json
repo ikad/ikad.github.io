@@ -5,7 +5,8 @@
   "homepage": "https://ikad.github.io",
   "scripts": {
     "start": "react-scripts-ts start",
-    "build": "react-scripts-ts build && yarn run build:after",
+    "build": "yarn run build:before && react-scripts-ts build && yarn run build:after",
+    "build:before": "rm -fr ../static/*",
     "build:after": "cp -fr build/* ../ && rm -fr build/*",
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject"
