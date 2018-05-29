@@ -18,7 +18,8 @@ const styles: Record<any, any> = (theme: Theme) => ({
   card: {
     margin: "auto",
     maxWidth: 750,
-    minHeight: "110vh",
+    minHeight: "100vh",
+    paddingBottom: "10vh",
   },
 })
 
