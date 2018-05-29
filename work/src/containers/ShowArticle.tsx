@@ -33,6 +33,10 @@ class ShowArticle extends React.Component<IShowArticleProps & WithStyles> {
 
   private scrollDiv: any
 
+  public shouldComponentUpdate(nextProps: any, nextStateIgnore: any) {
+    return nextProps.displayActions !== this.state.displayActions
+  }
+
   public render() {
     const { articles, dispatch, classes } = this.props
     const id = this.props.match.params.id
