@@ -32,27 +32,26 @@ class BookmarkButton extends React.Component<IBookmarkButtonProps> {
       this.setState({confirm: false})
     }
 
-    const bookmarkIcon = (
-      <IconButton aria-label="Bookmark" color={color} onClick={handleClick}>
-        <BookmarkIcon />
-      </IconButton>
-    )
-
-    const confirmIcon = (
-      <Zoom in={true}>
-        <div style={{display: "flex",flexDirection: "column" }}>
-          <IconButton aria-label="Bookmark" color="secondary" onClick={handleClick} style={{height: 32}}>
-            <DeleteIcon />
-          </IconButton>
-          <IconButton aria-label="Bookmark" color="default" onClick={handleCancel} style={{height: 32}}>
-            <CancelIcon />
-          </IconButton>
-        </div>
-      </Zoom>
-    )
-
     return (
-      this.state.confirm ? confirmIcon : bookmarkIcon
+      <React.Fragment>
+        <Zoom in={!this.state.confirm}>
+          <div style={{display: this.state.confirm ? "none" : "block"}}>
+            <IconButton aria-label="Bookmark" color={color} onClick={handleClick}>
+              <BookmarkIcon />
+            </IconButton>
+          </div>
+        </Zoom>
+        <Zoom in={this.state.confirm}>
+          <div style={{display: this.state.confirm ? "flex" : "none", flexDirection: "column" }}>
+            <IconButton aria-label="Bookmark" color="secondary" onClick={handleClick} style={{height: 32}}>
+              <DeleteIcon />
+            </IconButton>
+            <IconButton aria-label="Bookmark" color="default" onClick={handleCancel} style={{height: 32}}>
+              <CancelIcon />
+            </IconButton>
+          </div>
+        </Zoom>
+      </React.Fragment>
     )
   }
 
