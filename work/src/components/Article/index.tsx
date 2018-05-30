@@ -5,7 +5,7 @@ import * as ReactMarkdown from "react-markdown"
 import Card from "@material-ui/core/Card"
 import CardContent from "@material-ui/core/CardContent"
 import Divider from "@material-ui/core/Divider"
-import Slide from "@material-ui/core/Slide"
+import Fade from "@material-ui/core/Fade"
 import { Theme, withStyles, WithStyles } from "@material-ui/core/styles"
 import Typography from "@material-ui/core/Typography"
 
@@ -33,7 +33,7 @@ const Article: React.SFC<IArticleProps & WithStyles> = (props) => {
   const { article, classes } = props
 
   return (
-    <Slide direction="left" in={true} mountOnEnter={true} unmountOnExit={true}>
+    <Fade in={true}>
       <Card className={classes.card}>
         <CardContent>
           <Typography gutterBottom={true} variant="headline" component="h1">
@@ -54,7 +54,7 @@ const Article: React.SFC<IArticleProps & WithStyles> = (props) => {
           />
         </CardContent>
       </Card>
-    </Slide>
+    </Fade>
   )
 }
 
