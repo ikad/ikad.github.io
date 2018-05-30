@@ -16,7 +16,7 @@ export const loadArticles = () => {
 export const loadArticle = (id: string) => {
   return {
     [RSAA]: {
-      endpoint: `${rootURL}/¥${id}.json`,
+      endpoint: `${rootURL}/${id}.json`,
       method: "GET",
       types: ["REQUEST/article", "SUCCESS/article", "FAILURE/article"]
     }

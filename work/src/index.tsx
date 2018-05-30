@@ -8,7 +8,7 @@ import Home from "./containers/Home"
 import ShowArticle from "./containers/ShowArticle"
 
 import { Provider } from "react-redux"
-import { Route } from "react-router"
+import { Route, Switch } from "react-router"
 import { ConnectedRouter } from "react-router-redux"
 
 import { PersistGate } from "redux-persist/integration/react"
@@ -30,10 +30,12 @@ ReactDOM.render(
     <PersistGate loading={null} persistor={persistor}>
       <ConnectedRouter history={history}>
         <ThemeAppNav classes={{}} history={history}>
-          <Route exact={true} path="/" component={Home}/>
-          <Route exact={true} path="/:id" component={ShowArticle}/>
-          <Route path="/bookmark" component={Bookmark}/>
-          <Route path="/about" component={About}/>
+          <Switch>
+            <Route exact={true} path="/" component={Home}/>
+            <Route exact={true} path="/bookmark" component={Bookmark}/>
+            <Route exact={true} path="/about" component={About}/>
+            <Route exact={true} path="/:id" component={ShowArticle}/>
+          </Switch>
         </ThemeAppNav>
       </ConnectedRouter>
     </PersistGate>

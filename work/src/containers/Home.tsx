@@ -4,8 +4,6 @@ import { connect } from "react-redux"
 import List from "@material-ui/core/List"
 import { Theme, withStyles, WithStyles } from "@material-ui/core/styles"
 
-import * as InfiniteScroll from "react-infinite-scroller"
-
 import * as actions from "../actions"
 import { IArticle } from "../reducers"
 
@@ -48,14 +46,7 @@ class Home extends React.Component<IHomeProps & WithStyles> {
 
     return (
       <List>
-        <InfiniteScroll
-          loadMore={this.loadArticles}
-          hasMore={false}
-          loader={<div className="loader" key={0}>Loading ...</div>}
-          useWindow={false}
-        >
-          {articleListElement}
-        </InfiniteScroll>
+        {articleListElement}
       </List>
     )
   }

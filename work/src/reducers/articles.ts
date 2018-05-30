@@ -9,6 +9,12 @@ const articles = (state: IArticle[] = initialState.articles, action: { type: str
                       return {...c, bookmark: isBookmark}
                     })
                     .sort((a, b) => b.updated_at - a.updated_at)
+    case "SUCCESS/article":
+      return state.map(c => {
+                    const targetArticle = action.payload.find(s => s.id === c.id)
+                    return {...c, ...targetArticle}
+                  })
+                  .sort((a, b) => b.updated_at - a.updated_at)
     case "TOGGLE_BOOKMARK":
       return state.map(c => {
                     const targetArticle = action.payload.find(s => s.id === c.id)

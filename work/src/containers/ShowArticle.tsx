@@ -32,6 +32,8 @@ class ShowArticle extends React.Component<IShowArticleProps & WithStyles> {
   }
 
   public componentWillMount() {
+    const id = this.props.match.params.id
+    this.props.dispatch(actions.loadArticle(id))
     window.addEventListener("scroll", this.scrollListener)
   }
 
