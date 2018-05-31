@@ -37,6 +37,10 @@ class ShowArticle extends React.Component<IShowArticleProps & WithStyles> {
     window.addEventListener("scroll", this.scrollListener)
   }
 
+  public componentWillUnmount() {
+    window.removeEventListener("scroll", this.scrollListener)
+  }
+
   public render() {
     const { articles, dispatch, classes } = this.props
     const { displayAction }= this.state

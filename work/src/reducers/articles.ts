@@ -1,26 +1,25 @@
 import { IArticle, initialState } from "."
 
-const articles = (state: IArticle[] = initialState.articles, action: { type: string, payload: IArticle[]}) => {
+const mergedArticle = (stateArticles: IArticle[], payloadArticle: IArticle) => {
+  const stateArticle = stateArticles.find(c => c.id === payloadArticle.id) || { bookmark: false }
+  return {
+    ...stateArticle,
+    ...payloadArticle,
+  }
+}
+
+const articles = (state: IArticle[] = initialState.articles, action: any) => {
   switch (action.type) {
     case "SUCCESS/articles":
-      return action.payload.map(c => {
-                      const storedArticle = state.find(s => s.id === c.id)
-                      const isBookmark = storedArticle ? storedArticle.bookmark : false
-                      return {...c, bookmark: isBookmark}
-                    })
+      return (action.payload as IArticle[]).map(c => mergedArticle(state, c))
                     .sort((a, b) => b.updated_at - a.updated_at)
     case "SUCCESS/article":
-      return state.map(c => {
-                    const targetArticle = action.payload.find(s => s.id === c.id)
-                    return {...c, ...targetArticle}
-                  })
+      return state.filter(c => c.id !== action.payload.id)
+                  .concat(mergedArticle(state, action.payload))
                   .sort((a, b) => b.updated_at - a.updated_at)
     case "TOGGLE_BOOKMARK":
-      return state.map(c => {
-                    const targetArticle = action.payload.find(s => s.id === c.id)
-                    const isBookmark = targetArticle ? targetArticle.bookmark : c.bookmark
-                    return {...c, bookmark: isBookmark}
-                  })
+      return state.filter(c => c.id !== action.payload.id)
+                  .concat(action.payload)
                   .sort((a, b) => b.updated_at - a.updated_at)
     default:
       return state
